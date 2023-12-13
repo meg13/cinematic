@@ -1,0 +1,39 @@
+/* Rubik font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800&display=swap');
+
+:root {
+    --bg: #2A2734;
+    --primary: #F98066;
+    --primary-bg: rgba(249, 128, 102, 0.15);
+    --overlay1: #403B4F;
+    --overlay2: #5D5774;
+    --confirm: #4BF5A4;
+    --confirm-bg: rgba(44, 150, 99, 0.15);
+    --text: #FFFBF7;
+}
+
+body {
+    font-family: "Rubik", "Arial", sans-serif;
+    font-size: 12px;
+}
+
+h1, h2, h3, h4 {
+    line-height: normal;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 12px;
+}
