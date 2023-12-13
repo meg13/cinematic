@@ -15,6 +15,9 @@
 body {
     font-family: "Rubik", "Arial", sans-serif;
     font-size: 12px;
+    padding: 0;
+    margin: 16px;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -28,6 +31,7 @@ h1 {
 
 h2 {
     font-size: 18px;
+    margin-top: 32px;
 }
 
 h3 {
@@ -40,4 +44,36 @@ h4 {
 
 strong, header a {
     font-weight: 600 /* semibold */;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.movie-list {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.movie {
+    display: inline-block;
+    width: 100px;
+    margin-right: 16px;
+}
+
+.movie > div {
+    height: 148px;
+    background-color: #C6BAEC;
+    border-radius: 16px;
+/*     background-image: url('https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg');
+    background-size: cover; */
+}
+
+.movie > p {
+    text-align: center;
+    font-size: 10px;
 }
