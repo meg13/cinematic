@@ -19,6 +19,9 @@ body {
     padding: 0;
     margin: var(--base-spacing);
     overflow-x: hidden;
+    
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 h1, h2, h3, h4 {
