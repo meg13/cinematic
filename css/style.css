@@ -72,17 +72,17 @@ ul {
     display: none;  /* Safari and Chrome */
 }
 
-.movie {
+.movie-list > li {
     display: inline-block;
     width: 100px;
     margin-right: var(--base-spacing);
 }
 
-.movie:first-child {
+.movie-list > li:first-child {
     margin-left: var(--base-spacing);
 }
 
-.movie > div {
+.movie-list > li > div {
     height: 148px;
     background-color: #C6BAEC;
     border-radius: 16px;
@@ -90,7 +90,7 @@ ul {
     background-size: cover; */
 }
 
-.movie > p {
+.movie-list > li > p {
     text-align: center;
     font-size: 10px;
 }
