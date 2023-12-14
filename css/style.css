@@ -10,13 +10,14 @@
     --confirm: #4BF5A4;
     --confirm-bg: rgba(44, 150, 99, 0.15);
     --text: #FFFBF7;
+    --base-spacing: 16px;
 }
 
 body {
     font-family: "Rubik", "Arial", sans-serif;
     font-size: 12px;
     padding: 0;
-    margin: 16px;
+    margin: var(--base-spacing);
     overflow-x: hidden;
 }
 
@@ -54,15 +55,31 @@ ul {
     padding: 0;
 }
 
+/* Movies */
+
 .movie-list {
     overflow-x: auto;
     white-space: nowrap;
+    /* Remove side spacing when scrolling */
+    margin-left: calc(-1 * var(--base-spacing));
+    width: calc(100% + var(--base-spacing) * 2);
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.movie-list::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .movie {
     display: inline-block;
     width: 100px;
-    margin-right: 16px;
+    margin-right: var(--base-spacing);
+}
+
+.movie:first-child {
+    margin-left: var(--base-spacing);
 }
 
 .movie > div {
