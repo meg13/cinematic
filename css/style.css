@@ -58,6 +58,56 @@ ul {
     padding: 0;
 }
 
+/* Profile */
+
+header h1 {
+    margin: var(--base-spacing) 0;
+}
+
+header a {
+    color: var(--text);
+}
+
+header p {
+    display: inline-block;
+    margin-bottom: var(--base-spacing);
+    margin-top: 0;
+    margin-right: var(--base-spacing);
+}
+
+/* h1 followed by a */
+header h1:has(+ a) {
+    float: left;
+    display: inline;
+}
+
+/* a preceeded by h1 */
+header h1 + a {
+    margin: var(--base-spacing);
+    margin-right: var(--base-spacing);
+    float: right;
+}
+
+header .follow, header .following {
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 12px;
+}
+
+header .follow {
+    background-color: var(--primary);
+}
+
+header .following {
+    background-color: var(--overlay1);
+}
+
+header .edit {
+    padding-top: 6px;
+    font-weight: normal;
+    opacity: .6;
+}
+
 /* Movies */
 
 .movie-list {
