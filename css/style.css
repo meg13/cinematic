@@ -73,6 +73,7 @@ header p {
     margin-bottom: var(--base-spacing);
     margin-top: 0;
     margin-right: var(--base-spacing);
+    line-height: 1.4;
 }
 
 /* h1 followed by a */
