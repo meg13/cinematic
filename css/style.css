@@ -68,21 +68,19 @@ header a {
     color: var(--text);
 }
 
-header p {
-    display: inline-block;
-    margin-bottom: var(--base-spacing);
-    margin-top: 0;
-    margin-right: var(--base-spacing);
-    line-height: 1.4;
+/* header containing action */
+header:has(a) {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* h1 followed by a */
+/* h1 followed by action */
 header h1:has(+ a) {
     float: left;
     display: inline;
 }
 
-/* a preceeded by h1 */
+/* action preceeded by h1 */
 header h1 + a {
     margin: var(--base-spacing);
     margin-right: var(--base-spacing);
@@ -107,6 +105,14 @@ header .edit {
     padding-top: 6px;
     font-weight: normal;
     opacity: .6;
+}
+
+.bio p {
+    display: inline-block;
+    margin-bottom: var(--base-spacing);
+    margin-top: 0;
+    margin-right: var(--base-spacing);
+    line-height: 1.4;
 }
 
 /* Movies */
