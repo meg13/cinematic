@@ -1,0 +1,10 @@
+@media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+    }
+
+    .col-left {
+        width: 50%;
+        margin-right: var(--base-spacing);
+    }
+}
