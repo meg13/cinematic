@@ -11,4 +11,15 @@
     .col-right section:first-child {
         margin-top: 0;
     }
+
+    .movie-list {
+        width: auto;
+        margin: auto;
+        overflow-x: hidden;
+        white-space: normal;
+    }
+
+    .movie-list > li:first-child {
+        margin-left: auto;
+    }
 }
