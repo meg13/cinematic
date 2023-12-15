@@ -5,6 +5,10 @@
 
     .col-left {
         width: 50%;
-        margin-right: var(--base-spacing);
+        margin-right: calc(var(--base-spacing) * 2);
+    }
+
+    .col-right section:first-child {
+        margin-top: 0;
     }
 }
