@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/feedStyle.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -12,23 +15,24 @@
         </section>
         <section>
             <h2>Post</h2>
-            <article>
+            <article class="post">
                 <header>
                     <h3>Titolo Film</h3>
                 </header>
                 <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
                 <footer>
                     <ul>
-                        <li><button type="like-button" id="like">
+                        <li class="unliked">
+                            <button class="like-button" type="like-button" id="like">
                             <i class="fa fa-heart"></i>
+                            </button>
                             <span id="like-count">302</span>
-                        </button>
                         </li>
                         <li>
-                            <button type="comment-button" id="like">
+                            <button class="comment-button" type="comment-button" id="comment">
                                 <i class="fa fa-comment"></i>
-                                <span id="comment-count">200</span>
                             </button>
+                            <span id="comment-count">200</span>
                         </li>
                         <li>
                             <p>username</p>
@@ -36,8 +40,67 @@
                     </ul>
                 </footer>
             </article>
+            <article class="post">
+                <header>
+                    <h3>Titolo Film</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                <footer>
+                    <ul>
+                        <li class="liked">
+                            <button class="like-button" type="like-button" id="like">
+                            <i class="fa fa-heart"></i>
+                            </button>
+                            <span id="like-count">302</span>
+                        </li>
+                        <li>
+                            <button class="comment-button" type="comment-button" id="comment">
+                                <i class="fa fa-comment"></i>
+                            </button>
+                            <span id="comment-count">200</span>
+                        </li>
+                        <li>
+                            <p>username</p>
+                        </li>
+                    </ul>
+                </footer>
+            </article>
+            <article class="post">
+                <header>
+                    <h3>Titolo Film</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                <footer>
+                    <ul>
+                        <li class="liked">
+                            <button class="like-button" type="like-button" id="like">
+                            <i class="fa fa-heart"></i>
+                            </button>
+                            <span id="like-count">302</span>
+                        </li>
+                        <li>
+                            <button class="comment-button" type="comment-button" id="comment">
+                                <i class="fa fa-comment"></i>
+                            </button>
+                            <span id="comment-count">200</span>
+                        </li>
+                        <li>
+                            <p>username</p>
+                        </li>
+                    </ul>
+                </footer>
+                <hr class="solid">
+                <article class="old-comment">
+                    <header>
+                        <p>user1</p>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                </article>
+                <section class="comment-box">
+                    <textarea name="comment" placeholder="Scrivi un commento..." rows="1"></textarea>
+                    <button>Invia</button>
+                </section>
+            </article>
         </section>
     </body>
-    
-
 </html>
