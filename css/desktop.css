@@ -1,15 +1,26 @@
 @media only screen and (min-width: 768px) {
     body {
         display: flex;
+        margin: var(--base-spacing) 48px;
     }
 
     .col-left {
         width: 50%;
-        margin-right: calc(var(--base-spacing) * 2);
+        margin-right: 48px;
     }
 
     .col-right section:first-child {
         margin-top: 0;
+    }
+
+    /* header containing action */
+    header:has(a) {
+        justify-content: left;
+    }
+
+    /* h1 followed by action */
+    header h1:has(+ a) {
+        margin-right: var(--base-spacing);
     }
 
     .movie-list {
@@ -19,7 +30,7 @@
         white-space: normal;
     }
 
-    .movie-list > li:first-child {
+    .movie-list>li:first-child {
         margin-left: auto;
     }
 }
