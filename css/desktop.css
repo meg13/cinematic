@@ -13,6 +13,14 @@
         margin-top: 0;
     }
 
+    .col-center-only {
+        width: 100%;
+    }
+
+    .col-center-only header {
+        text-align: center;
+    }
+
     /* header containing action */
     header:has(a) {
         justify-content: left;
@@ -30,7 +38,14 @@
         white-space: normal;
     }
 
-    .movie-list>li:first-child {
+    .movie-list > li:first-child {
+        margin-left: auto;
+    }
+
+    .notification-list {
+        width: 400px;
+        /* Center */
+        margin-right: auto;
         margin-left: auto;
     }
 }

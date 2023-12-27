@@ -157,3 +157,22 @@ header .edit {
     text-align: center;
     font-size: 10px;
 }
+
+/* Notifications */
+
+.notification-list {
+    width: 100%;
+    margin-top: calc(var(--base-spacing) * 2);
+}
+
+.notification-list li {
+    background-color: var(--overlay1);
+    padding: var(--base-spacing);
+    margin-bottom: var(--base-spacing);
+    border-radius: 16px;
+}
+
+.notification-list a {
+    text-decoration: none;
+    color: var(--text);
+}
