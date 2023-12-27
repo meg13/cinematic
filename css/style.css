@@ -61,15 +61,38 @@ ul {
     padding: 0;
 }
 
-/* Profile */
-
 header h1 {
     margin: var(--base-spacing) 0;
 }
 
-header a {
+header a, nav a {
     color: var(--text);
 }
+
+/* Navbar */
+
+nav {
+    width: 100%;
+    padding: 12px 0;
+    background-color: var(--overlay1);
+    border-radius: 8px 8px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid var(--overlay2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+}
+
+nav a:not(:hover) {
+    text-decoration: none;
+}
+
+/* Profile */
 
 /* header containing action */
 header:has(a) {
@@ -86,7 +109,6 @@ header h1:has(+ a) {
 /* action preceeded by h1 */
 header h1 + a {
     margin: var(--base-spacing);
-    margin-right: var(--base-spacing);
     float: right;
 }
 

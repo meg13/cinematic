@@ -1,11 +1,27 @@
 @media only screen and (min-width: 768px) {
     body {
-        display: flex;
-        margin: var(--base-spacing) 48px;
+        margin: 0;
+    }
+
+    nav {
+        position: relative;
+        top: 0;
+        bottom: auto;
+        border: none;
+        border-radius: 0 0 8px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: calc(var(--base-spacing) * 2);
     }
 
     .col-left {
         width: 50%;
+        margin: 0 48px;
+        float: left;
+    }
+
+    .col-right {
+        float: left;
         margin-right: 48px;
     }
 
