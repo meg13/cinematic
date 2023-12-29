@@ -100,7 +100,7 @@ nav a:not(:hover) {
 /* Profile */
 
 /* header containing action */
-header:has(a) {
+header:has(> a) {
     display: flex;
     justify-content: space-between;
 }

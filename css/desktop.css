@@ -4,7 +4,7 @@
         margin: 0;
     }
 
-    body:has(nav) {
+    body:has(> nav) {
         /*
         Prevents navbar from overlapping content.
         Works when text is scaled as well
@@ -47,7 +47,7 @@
     }
 
     /* header containing action */
-    header:has(a) {
+    header:has(> a) {
         justify-content: left;
     }
 
