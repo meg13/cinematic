@@ -24,12 +24,13 @@
     }
 
     .col-left {
-        flex: 6;
+        flex: 6; /* 60% width */
         margin: 0 48px;
     }
 
     .col-right {
-        flex: 4;
+        flex: 4; /* 40% width */
+        margin-top: 0;
         margin-right: 48px;
     }
 

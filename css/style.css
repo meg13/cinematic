@@ -69,6 +69,10 @@ header a, nav a {
     color: var(--text);
 }
 
+.col-left {
+    margin-top: 0;
+}
+
 /* Navbar */
 
 nav {
