@@ -2,7 +2,14 @@
     body {
         display: flex;
         margin: 0;
-        margin-top: 90px; /* TODO trovare alternativa (brutto) */
+    }
+
+    body:has(nav) {
+        /*
+        Prevents navbar from overlapping content.
+        Works when text is scaled as well
+        */
+        margin-top: 7.5em;
     }
 
     nav {
