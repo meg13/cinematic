@@ -6,11 +6,17 @@ const API_ENDPOINT = "http://www.omdbapi.com/?";
 const API_KEY_SUFFIX = "&apikey=" . API_KEY;
 
 /**
- * Gets JSON data from omdbapi.com
+ * Gets JSON data from omdbapi.com, or `false` if an error occurred.
  */
 function omdb_get($params) {
     $content = file_get_contents(API_ENDPOINT . $params . API_KEY_SUFFIX);
-    return json_decode($content);
+    $result = json_decode($content);
+
+    if (isset($result->Error)) {
+        return false;
+    }
+
+    return $result;
 }
 
 function omdb_get_movie_by_title($title) {
