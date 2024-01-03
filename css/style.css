@@ -217,6 +217,7 @@ header .edit {
 .movie-header {
     display: flex;
     flex-direction: column;
+    margin-bottom: 28px;
 }
 
 .movie-header, .watchlist-add, .watched, .unwatched {    
@@ -224,7 +225,11 @@ header .edit {
 }
 
 .movie-header h1 {
-    margin: 8px 0 0 0;
+    margin: 0;
+}
+
+.movie-header .col-right {
+    margin-top: 8px;
 }
 
 .movie-header span, .movie-description .weak {
@@ -238,7 +243,6 @@ header .edit {
 }
 
 .watchlist-add, .watched, .unwatched {
-    display: block;
     color: var(--text);
     font-weight: 600;
     text-decoration: none;
@@ -249,7 +253,7 @@ header .edit {
 }
 
 .watched, .unwatched {
-    margin-top: 40px;
+    margin-top: 48px;
 }
 
 .watched > a, .unwatched > a {
