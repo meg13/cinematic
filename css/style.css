@@ -142,6 +142,9 @@ header .edit {
     margin-bottom: var(--base-spacing);
     margin-top: 0;
     margin-right: var(--base-spacing);
+}
+
+.bio p, .movie-description p {
     line-height: 1.4;
 }
 
@@ -207,4 +210,64 @@ header .edit {
 .notification-list a {
     text-decoration: none;
     color: var(--text);
+}
+
+/* Movie */
+
+.movie-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-header, .watchlist-add, .watched, .unwatched {
+    
+    text-align: center;
+}
+
+.movie-header h1 {
+    margin: 8px 0 0 0;
+}
+
+.movie-header span, .movie-description .weak {
+    display: block;
+    line-height: 1.5;
+    opacity: .6;
+}
+
+.movie-header .stars {
+    margin-bottom: var(--base-spacing);
+}
+
+.watchlist-add, .watched, .unwatched {
+    display: block;
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.movie-description p {
+    margin: var(--base-spacing) 0;
+}
+
+.watched, .unwatched {
+    margin-top: 40px;
+}
+
+.watched > a, .unwatched > a {
+    padding: 16px 36px;
+    font-size: 1.2em;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.watched > a {
+    display: inline;
+    color: var(--confirm);
+    background-color: var(--confirm-bg);
+}
+
+.unwatched > a {
+    display: inline;
+    color: var(--text);
+    background-color: var(--overlay1);
 }
