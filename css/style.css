@@ -219,8 +219,7 @@ header .edit {
     flex-direction: column;
 }
 
-.movie-header, .watchlist-add, .watched, .unwatched {
-    
+.movie-header, .watchlist-add, .watched, .unwatched {    
     text-align: center;
 }
 
