@@ -257,20 +257,18 @@ header .edit {
 }
 
 .watched > a, .unwatched > a {
-    padding: 16px 36px;
+    padding: 16px 36px 16px 28px;
     font-size: 1.2em;
     border-radius: 12px;
     text-decoration: none;
 }
 
 .watched > a {
-    display: inline;
     color: var(--confirm);
     background-color: var(--confirm-bg);
 }
 
 .unwatched > a {
-    display: inline;
     color: var(--text);
     background-color: var(--overlay1);
 }
