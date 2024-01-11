@@ -30,20 +30,23 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 18px;
-    margin-top: 32px;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 1.2em;
 }
 
 h4 {
-    font-size: 12px;
+    font-size: 1em;
+}
+
+section {
+    margin-top: calc(var(--base-spacing) * 2);
 }
 
 strong, header a {
@@ -56,6 +59,98 @@ li {
 
 ul {
     padding: 0;
+}
+
+header h1 {
+    margin: var(--base-spacing) 0;
+}
+
+header a, nav a {
+    color: var(--text);
+}
+
+.col-left {
+    margin-top: 0;
+}
+
+/* Navbar */
+
+nav {
+    width: 100%;
+    padding: 12px 0;
+    background-color: var(--overlay1);
+    border-radius: 8px 8px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid var(--overlay2);
+    font-size: 0.9em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 25%;
+}
+
+nav a:not(:hover) {
+    text-decoration: none;
+}
+
+/* Profile */
+
+/* header containing action */
+header:has(> a) {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* h1 followed by action */
+header h1:has(+ a) {
+    float: left;
+    display: inline;
+}
+
+/* action preceeded by h1 */
+header h1 + a {
+    margin: var(--base-spacing);
+    float: right;
+}
+
+header .follow, header .following {
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 12px;
+}
+
+header .follow {
+    background-color: var(--primary);
+}
+
+header .following {
+    background-color: var(--overlay1);
+}
+
+header .edit {
+    padding-top: 6px;
+    font-weight: normal;
+    opacity: .6;
+}
+
+.bio p {
+    display: inline-block;
+    margin-bottom: var(--base-spacing);
+    margin-top: 0;
+    margin-right: var(--base-spacing);
+}
+
+.bio p, .movie-description p {
+    line-height: 1.4;
+}
+
+/* Bio text */
+.bio p:first-child {
+    display: block;
 }
 
 /* Movies */
@@ -95,5 +190,85 @@ ul {
 
 .movie-list > li > p {
     text-align: center;
-    font-size: 10px;
+    font-size: 0.85em;
+}
+
+/* Notifications */
+
+.notification-list {
+    width: 100%;
+    margin-top: calc(var(--base-spacing) * 2);
+}
+
+.notification-list li {
+    background-color: var(--overlay1);
+    padding: var(--base-spacing);
+    margin-bottom: var(--base-spacing);
+    border-radius: 16px;
+}
+
+.notification-list a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* Movie */
+
+.movie-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.movie-header, .watchlist-add, .watched, .unwatched {    
+    text-align: center;
+}
+
+.movie-header h1 {
+    margin: 0;
+}
+
+.movie-header .col-right {
+    margin-top: 8px;
+}
+
+.movie-header span, .movie-description .weak {
+    display: block;
+    line-height: 1.5;
+    opacity: .6;
+}
+
+.movie-header .stars {
+    margin-bottom: var(--base-spacing);
+}
+
+.watchlist-add, .watched, .unwatched {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.movie-description p {
+    margin: var(--base-spacing) 0;
+}
+
+.watched, .unwatched {
+    margin-top: 48px;
+}
+
+.watched > a, .unwatched > a {
+    padding: 16px 36px 16px 28px;
+    font-size: 1.2em;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.watched > a {
+    color: var(--confirm);
+    background-color: var(--confirm-bg);
+}
+
+.unwatched > a {
+    color: var(--text);
+    background-color: var(--overlay1);
 }

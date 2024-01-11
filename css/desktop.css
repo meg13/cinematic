@@ -1,0 +1,87 @@
+@media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+        margin: 0;
+    }
+
+    body:has(> nav) {
+        /*
+        Prevents navbar from overlapping content.
+        Works when text is scaled as well
+        */
+        margin-top: 7.5em;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        border: none;
+        border-radius: 0 0 8px 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: calc(var(--base-spacing) * 2);
+    }
+
+    .col-left {
+        flex: 6; /* 60% width */
+        margin: 0 48px;
+    }
+
+    .col-right {
+        flex: 4; /* 40% width */
+        margin-top: 0;
+        margin-right: 48px;
+    }
+
+    .col-right section:first-child {
+        margin-top: 0;
+    }
+
+    .col-center-only {
+        width: 100%;
+    }
+
+    .col-center-only header {
+        text-align: center;
+    }
+
+    /* header containing action */
+    header:has(> a) {
+        justify-content: left;
+    }
+
+    /* h1 followed by action */
+    header h1:has(+ a) {
+        margin-right: var(--base-spacing);
+    }
+
+    .movie-list {
+        width: auto;
+        margin: auto;
+        overflow-x: hidden;
+        white-space: normal;
+    }
+
+    .movie-list > li:first-child {
+        margin-left: auto;
+    }
+
+    .notification-list {
+        width: 400px;
+        /* Center */
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .movie-header {
+        flex-direction: row;
+        margin: 8px 0 20px 0;
+    }
+
+    .movie-header .col-right {
+        text-align: start;
+        margin-left: var(--base-spacing);
+        margin-bottom: var(--base-spacing);
+    }
+}
