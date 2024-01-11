@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/feedStyle.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/icons.css">
     </head>
     <body>
         <header>
@@ -23,14 +23,14 @@
                 <footer>
                     <ul>
                         <li class="unliked">
-                            <button class="like-button" type="like-button" id="like">
-                            <i class="fa fa-heart"></i>
+                            <button class="like-button" id="like">
+                                <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
-                            <button class="comment-button" type="comment-button" id="comment">
-                                <i class="fa fa-comment"></i>
+                            <button class="comment-button" id="comment">
+                                <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
                         </li>
@@ -48,14 +48,14 @@
                 <footer>
                     <ul>
                         <li class="liked">
-                            <button class="like-button" type="like-button" id="like">
-                            <i class="fa fa-heart"></i>
+                            <button class="like-button" id="like">
+                                <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
-                            <button class="comment-button" type="comment-button" id="comment">
-                                <i class="fa fa-comment"></i>
+                            <button class="comment-button" id="comment">
+                                <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
                         </li>
@@ -74,13 +74,13 @@
                     <ul>
                         <li>
                             <button class="like-button" type="like-button" id="like">
-                            <i class="fa fa-heart"></i>
+                                <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
                             <button class="comment-button" type="comment-button" id="comment">
-                                <i class="fa fa-comment"></i>
+                                <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
                         </li>
@@ -89,17 +89,15 @@
                         </li>
                     </ul>
                 </footer>
-                <hr class="solid">
-                <article class="old-comment">
-                    <header>
-                        <p>user1</p>
-                    </header>
+                <hr>
+                <div>
+                    <p>user1</p>
                     <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
-                </article>
-                <section class="comment-box">
+                </div>
+                <form>
                     <textarea name="comment" placeholder="Scrivi un commento..." rows="1"></textarea>
-                    <button>Invia</button>
-                </section>
+                    <input type="submit" value="Invia">
+                </form>
             </article>
         </section>
     </body>
