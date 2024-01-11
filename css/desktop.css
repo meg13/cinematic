@@ -42,8 +42,18 @@
         width: 100%;
     }
 
+    .col-center-only > * {
+        /* Center */
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     .col-center-only header {
         text-align: center;
+    }
+
+    .col-center-only form, .col-center-only .movie-grid {
+        width: 45%;
     }
 
     /* header containing action */
@@ -62,6 +72,10 @@
         overflow-x: hidden;
         white-space: normal;
     }
+    
+    .movie-list > li {
+        margin-bottom: 16px;
+    }
 
     .movie-list > li:first-child {
         margin-left: auto;
@@ -69,9 +83,6 @@
 
     .notification-list {
         width: 400px;
-        /* Center */
-        margin-right: auto;
-        margin-left: auto;
     }
 
     .movie-header {

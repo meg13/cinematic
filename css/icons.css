@@ -8,12 +8,14 @@ svg {
 
 .watched svg {
     background-color: var(--confirm);
-    clip-path: path('M18 5.83333L8.00002 15.8333L3.41669 11.25L4.59169 10.075L8.00002 13.475L16.825 4.65833L18 5.83333Z');
+    mask-image: url('../svg/tick.svg');
+    -webkit-mask-image: url('../svg/tick.svg');
 }
 
 .unwatched svg, .watchlist-add svg {
     background-color: var(--text);
-    clip-path: path('M16.3334 10.8316H11.3334V15.8316H9.66669V10.8316H4.66669V9.16498H9.66669V4.16498H11.3334V9.16498H16.3334V10.8316Z');
+    mask-image: url('../svg/add.svg');
+    -webkit-mask-image: url('../svg/add.svg');
 }
 
 .watchlist-add svg {
