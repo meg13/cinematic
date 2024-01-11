@@ -193,6 +193,23 @@ header .edit {
     font-size: 0.85em;
 }
 
+.movie-grid {
+    width: auto;
+    margin: auto;
+    overflow-x: hidden;
+    white-space: normal;
+    text-align: center;
+}
+
+.movie-grid > li:first-child {
+    margin-left: auto;
+}
+
+/* form preceeded by header */
+header + form {
+    margin: 32px 0;
+}
+
 /* Notifications */
 
 .notification-list {
