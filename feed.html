@@ -5,15 +5,17 @@
         <link rel="stylesheet" href="css/feedStyle.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/desktop.css">
+        <title>Feed</title>
     </head>
     <body>
-        <header>
-            <h1>Attività di chi segui</h1>
-        </header>
-        <section>
+        <section class="col-left">
+            <header>
+                <h1>Attività di chi segui</h1>
+            </header>
             <h2>Visti di recente</h2>
         </section>
-        <section>
+        <section class="col-right">
             <h2>Post</h2>
             <article class="post">
                 <header>
@@ -99,6 +101,16 @@
                     <input type="submit" value="Invia">
                 </form>
             </article>
+            <article class="write-a-post">
+                <header>
+                    <h3>Scrivi un post</h3>
+                </header>
+                <form>
+                    <textarea name="comment" placeholder="Aggiungi un commento..." rows="4"></textarea>
+                    <input type="submit" value="Pubblica">
+                </form>
+            </article>
+
         </section>
     </body>
 </html>

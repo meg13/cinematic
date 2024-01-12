@@ -54,12 +54,22 @@ form > ul > li > input, section > ul > li {
 }
 
 form > ul > li > input {
+    color: var(--text);
     background-color: var(--overlay2);
     border: none;
 }
 
 form > ul > li:not(:last-child) > input{
     margin-top: 8px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: var(--text);
+    opacity: 0.5;
 }
 
 p {

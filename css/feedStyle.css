@@ -10,12 +10,30 @@
     --base-spacing: 16px;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header > h1 {
+    margin-top: var(--base-spacing);
+    display: inline;
+}
+
+section:first-child {
+    margin-bottom: 32px;
+}
+
+section:first-child > h2 {
+    margin: 0;;
+}
+
 /* Posts */
 
 article {
     padding: var(--base-spacing);
     border-radius: 16px;
-    background: var(--Overlay-1, #403B4F);
+    background: var(--overlay1);
     margin-top: 20px;
 }
 
@@ -36,9 +54,10 @@ article > footer > ul > li {
     margin: 0;
 }
 
-article > footer > ul > li > p, div > :first-child  {
+article > footer > ul > li > p, div > :first-child, ::placeholder  {
     color: var(--text);
     opacity: 0.5;
+    font-family: "Rubik", "Arial", sans-serif;
 }
 
 .like-button, .filled-like-button, .comment-button {
@@ -86,7 +105,9 @@ form {
 form > textarea{
     width: 100%;
     border-radius: 8px;
-    background: var(--Overlay-2, #5D5774);
+    font-family: "Rubik", "Arial", sans-serif;
+    color: var(--text);
+    background: var(--overlay2);
     border: none;
     padding: 12px;
     margin-right: 8px;
@@ -94,10 +115,28 @@ form > textarea{
 
 form > input {
     border-radius: 8px;
-    background: var(--Primary, #F98066);
+    color: var(--text);
+    font-family: "Rubik", "Arial", sans-serif;
+    background: var(--primary);
     padding: 12px;
     margin: 0;
     border: none;
 }
 
+.write-a-post > form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 14px;
+    padding: 0;
+}
 
+.write-a-post > form > textarea{
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    margin-right: 0;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
