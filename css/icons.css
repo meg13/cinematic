@@ -48,3 +48,20 @@ nav .bell-icon {
     mask-image: url('../svg/bell.svg');
     -webkit-mask-image: url('../svg/bell.svg');
 }
+
+.stars svg {
+    width: 16px;
+    height: 15px;
+    background-color: var(--primary);
+    mask-image: url('../svg/starempty.svg');
+    -webkit-mask-image: url('../svg/starempty.svg');
+}
+
+:is(.stars-1, .stars-2, .stars-3, .stars-4, .stars-5) svg:first-child,
+:is(.stars-2, .stars-3, .stars-4) svg:nth-child(2),
+:is(.stars-3, .stars-4) svg:nth-child(3),
+:is(.stars-4) svg:nth-child(4),
+.stars-5 svg {
+    mask-image: url('../svg/starfill.svg');
+    -webkit-mask-image: url('../svg/starfill.svg');
+}
