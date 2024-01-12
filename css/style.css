@@ -93,8 +93,22 @@ nav ul {
     padding: 0 25%;
 }
 
+nav li {
+    margin: 0 16px;
+}
+
+nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 nav a:not(:hover) {
     text-decoration: none;
+}
+
+nav a svg {
+    margin-bottom: 6px;
 }
 
 /* Profile */

@@ -21,3 +21,30 @@ svg {
 .watchlist-add svg {
     margin-right: 8px;
 }
+
+nav svg {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    background-color: var(--text);
+}
+
+nav .home-icon {
+    mask-image: url('../svg/home.svg');
+    -webkit-mask-image: url('../svg/home.svg');
+}
+
+nav .search-icon {
+    mask-image: url('../svg/search.svg');
+    -webkit-mask-image: url('../svg/search.svg');
+}
+
+nav .profile-icon {
+    mask-image: url('../svg/profile.svg');
+    -webkit-mask-image: url('../svg/profile.svg');
+}
+
+nav .bell-icon {
+    mask-image: url('../svg/bell.svg');
+    -webkit-mask-image: url('../svg/bell.svg');
+}
