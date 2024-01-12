@@ -6,16 +6,19 @@ svg {
     vertical-align: middle;
 }
 
-.watched svg {
-    background-color: var(--confirm);
-    mask-image: url('../svg/tick.svg');
-    -webkit-mask-image: url('../svg/tick.svg');
-}
-
 .unwatched svg, .watchlist-add svg {
     background-color: var(--text);
     mask-image: url('../svg/add.svg');
     -webkit-mask-image: url('../svg/add.svg');
+}
+
+.watched svg, .in-watchlist svg {
+    mask-image: url('../svg/tick.svg');
+    -webkit-mask-image: url('../svg/tick.svg');
+}
+
+.watched svg {
+    background-color: var(--confirm);
 }
 
 .watchlist-add svg {
