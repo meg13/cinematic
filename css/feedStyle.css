@@ -48,10 +48,6 @@ article > footer > ul > li > p, div > :first-child  {
     margin-right: 8px;
 }
 
-.like-button:hover .fa {
-    color: var(--primary);
-}
-
 article > footer > ul > li {
     margin-right: 32px;
     margin-left: 0;
@@ -89,7 +85,6 @@ form {
 
 form > textarea{
     width: 100%;
-    font-family: "Rubik", "Arial", sans-serif;
     border-radius: 8px;
     background: var(--Overlay-2, #5D5774);
     border: none;
@@ -98,7 +93,6 @@ form > textarea{
 }
 
 form > input {
-    font-family: "Rubik", "Arial", sans-serif;
     border-radius: 8px;
     background: var(--Primary, #F98066);
     padding: 12px;
