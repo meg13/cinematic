@@ -41,7 +41,7 @@ article > footer > ul > li > p, div > :first-child  {
     opacity: 0.5;
 }
 
-.like-button, .comment-button {
+.like-button, .filled-like-button, .comment-button {
     background: none;
     border: none;
     padding: 0;
@@ -57,7 +57,7 @@ article > footer > ul > li {
     margin-left: 0;
 }
 
-.liked .fa, .liked > span{
+.liked > span{
     border: none;
     color: var(--primary);
 }
