@@ -41,6 +41,7 @@ article > p {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 0;
+    line-height: 16px;
 }
 
 article > header > h3, footer > ul, footer > ul > li > p, div > p, article > header > div {
@@ -115,6 +116,8 @@ form > textarea{
     border: none;
     padding: 12px;
     margin-right: 8px;
+    resize: none;
+    line-height: 16px;
 }
 
 form > input {
@@ -148,4 +151,8 @@ input[type=submit] {
 .post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg{
     margin-right: 2px;
     margin-bottom: 3px;
+}
+
+.comment-a-post > div > p {
+    line-height: 16px;
 }
