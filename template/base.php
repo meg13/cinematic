@@ -6,6 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <?php if ($template["post"]): ?>
+    <link rel="stylesheet" href="css/feedStyle.css">    
+    <?php endif ?>
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/icons.css">
     <title><?php $template["title"] ?></title>
