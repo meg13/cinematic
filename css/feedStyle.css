@@ -60,7 +60,7 @@ article > footer > ul > li > p, div > :first-child, ::placeholder  {
     font-family: "Rubik", "Arial", sans-serif;
 }
 
-.like-button, .filled-like-button, .comment-button {
+.unliked > svg, .liked > svg, .comment-button > svg {
     background: none;
     border: none;
     padding: 0;

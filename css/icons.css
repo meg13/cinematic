@@ -22,19 +22,13 @@ svg {
     margin-right: 8px;
 }
 
-.comment-button svg, .like-button svg, .filled-like-button svg{
-    padding: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-}
-
 .comment-button svg {
     background-color: var(--text);
     mask-image: url('/svg/comment.svg');
     -webkit-mask-image: url('/svg/comment.svg');
 }
 
-.like-button svg {
+.unliked svg {
     width: 16px;
     height: 15px;
     background-color: var(--text);
@@ -42,7 +36,7 @@ svg {
     -webkit-mask-image: url('/svg/emptyheart.svg');
 }
 
-.filled-like-button svg {
+.liked svg {
     width: 18px;
     height: 18px;
     background-color: var(--primary);
