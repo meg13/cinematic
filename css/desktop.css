@@ -52,7 +52,7 @@
         text-align: center;
     }
 
-    .col-center-only form, .col-center-only .movie-grid {
+    .col-center-only form, .col-center-only > ul, .col-center-only > p, .col-center-only .movie-grid{
         width: 45%;
     }
 

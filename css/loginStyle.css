@@ -7,6 +7,7 @@
     --confirm: #4BF5A4;
     --confirm-bg: rgba(44, 150, 99, 0.15);
     --text: #FFFBF7;
+    --error: #FF5E5E;
     --base-spacing: 16px;
 }
 
@@ -14,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 header {
@@ -24,6 +25,10 @@ header {
 header > h1 {
     text-align: center;
     margin-bottom: 16px;
+}
+
+header > p {
+    margin: 0;
 }
 
 form > ul > li > label{
@@ -91,4 +96,17 @@ form > ul > li:last-child > input, section > ul > li {
 a {
     color: var(--text);
     text-decoration: none;
+}
+
+.wrong {
+    border: 2px solid var(--error);
+}
+
+.error {
+    margin-bottom: 12px;
+}
+
+#wrongCredential {
+    color: var(--error);
+    margin-top: 50px;
 }
