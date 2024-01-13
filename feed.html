@@ -25,13 +25,13 @@
                 <footer>
                     <ul>
                         <li class="unliked">
-                            <button class="like-button" id="like">
+                            <button class="like-button" type="button" id="not-like">
                                 <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
-                            <button class="comment-button" id="comment">
+                            <button class="comment-button" type="button" id="comment">
                                 <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
@@ -50,13 +50,13 @@
                 <footer>
                     <ul>
                         <li class="liked">
-                            <button class="filled-like-button" id="like">
+                            <button class="filled-like-button" type="button" id="like">
                                 <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
-                            <button class="comment-button" id="comment">
+                            <button class="comment-button" type="button" id="comment">
                                 <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
@@ -75,13 +75,13 @@
                 <footer>
                     <ul>
                         <li>
-                            <button class="like-button" type="like-button" id="like">
+                            <button class="like-button" type="button" id="like">
                                 <svg></svg>
                             </button>
                             <span id="like-count">302</span>
                         </li>
                         <li>
-                            <button class="comment-button" type="comment-button" id="comment">
+                            <button class="comment-button" type="button" id="comment">
                                 <svg></svg>
                             </button>
                             <span id="comment-count">200</span>
@@ -97,7 +97,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
                 </div>
                 <form>
-                    <textarea name="comment" placeholder="Scrivi un commento..." rows="1"></textarea>
+                    <label for="write-comment" hidden>Scrivi un post</label>
+                    <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
                     <input type="submit" value="Invia">
                 </form>
             </article>
@@ -106,11 +107,11 @@
                     <h3>Scrivi un post</h3>
                 </header>
                 <form>
-                    <textarea name="comment" placeholder="Aggiungi un commento..." rows="4"></textarea>
+                    <label for="add-comment" hidden>Aggiungi un post</label>
+                    <textarea id="add-comment" name="comment" placeholder="Aggiungi un commento..." rows="4"></textarea>
                     <input type="submit" value="Pubblica">
                 </form>
             </article>
-
         </section>
     </body>
 </html>

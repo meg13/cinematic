@@ -43,7 +43,7 @@ form > ul > li:not(:last-child) {
     padding-top: 8px;
 }
 
-form > ul > li:first-child {
+form > ul > li {
     margin-bottom: 12px;
 }
 
