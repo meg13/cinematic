@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/feedStyle.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/desktop.css">
+        <title>Feed</title>
     </head>
     <body>
-        <header>
-            <h1>Attività di chi segui</h1>
-        </header>
-        <section>
+        <section class="col-left">
+            <header>
+                <h1>Attività di chi segui</h1>
+            </header>
             <h2>Visti di recente</h2>
         </section>
-        <section>
+        <section class="col-right">
             <h2>Post</h2>
-            <article>
+            <article class="post">
                 <header>
                     <h3>Titolo Film</h3>
+                    <div class="stars stars-4"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
                 </header>
                 <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
                 <footer>
                     <ul>
-                        <li><button type="like-button" id="like">
-                            <i class="fa fa-heart"></i>
-                            <span id="like-count">302</span>
-                        </button>
+                        <li class="unliked">
+                            <svg></svg>
+                            <span>302</span>
                         </li>
-                        <li>
-                            <button type="comment-button" id="like">
-                                <i class="fa fa-comment"></i>
-                                <span id="comment-count">200</span>
-                            </button>
+                        <li class="comment-button">
+                            <svg></svg>
+                            <span>200</span>
                         </li>
                         <li>
                             <p>username</p>
@@ -36,8 +39,71 @@
                     </ul>
                 </footer>
             </article>
+            <article class="post">
+                <header>
+                    <h3>Titolo Film</h3>
+                    <div class="stars stars-4"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                <footer>
+                    <ul>
+                        <li class="liked">
+                            <svg></svg>
+                            <span>302</span>
+                        </li>
+                        <li class="comment-button">
+                            <svg></svg>
+                            <span>200</span>
+                        </li>
+                        <li>
+                            <p>username</p>
+                        </li>
+                    </ul>
+                </footer>
+            </article>
+            <article class="comment-a-post">
+                <header>
+                    <h3>Titolo Film</h3>
+                    <div class="stars stars-4"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                <footer>
+                    <ul>
+                        <li class="unliked">
+                            <svg></svg>
+                            <span>302</span>
+                        </li>
+                        <li class="comment-button">
+                            <svg></svg>
+                            <span>200</span>
+                        </li>
+                        <li>
+                            <p>username</p>
+                        </li>
+                    </ul>
+                </footer>
+                <hr>
+                <div>
+                    <p>user1</p>
+                    <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+                </div>
+                <form>
+                    <label for="write-comment" hidden>Scrivi un post</label>
+                    <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
+                    <input type="submit" value="Invia">
+                </form>
+            </article>
+            <article class="write-a-post">
+                <header>
+                    <h3>Scrivi un post</h3>
+                    <div class="stars stars-4"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
+                </header>
+                <form>
+                    <label for="add-comment" hidden>Aggiungi un post</label>
+                    <textarea id="add-comment" name="comment" placeholder="Aggiungi un commento..." rows="4"></textarea>
+                    <input type="submit" value="Pubblica">
+                </form>
+            </article>
         </section>
     </body>
-    
-
 </html>

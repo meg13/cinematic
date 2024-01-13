@@ -1,0 +1,112 @@
+:root {
+    --bg: #2A2734;
+    --primary: #F98066;
+    --primary-bg: rgba(249, 128, 102, 0.15);
+    --overlay1: #403B4F;
+    --overlay2: #5D5774;
+    --confirm: #4BF5A4;
+    --confirm-bg: rgba(44, 150, 99, 0.15);
+    --text: #FFFBF7;
+    --error: #FF5E5E;
+    --base-spacing: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+header > h1 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+header > p {
+    margin: 0;
+}
+
+form > ul > li > label{
+    display: flex;
+}
+
+form > ul {
+    margin: 0;
+}
+
+form > ul > li:not(:last-child) {
+    padding-top: 8px;
+}
+
+form > ul > li {
+    margin-bottom: 12px;
+}
+
+form > ul > li:last-child {
+    margin-top: 40px;
+}
+
+form > ul > li > input, section > ul > li {
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form > ul > li > input {
+    color: var(--text);
+    background-color: var(--overlay2);
+    border: none;
+}
+
+form > ul > li:not(:last-child) > input{
+    margin-top: 8px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: var(--text);
+    opacity: 0.5;
+}
+
+p {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+section > ul > li {
+    text-align: center;
+}
+
+form > ul > li:last-child > input, section > ul > li {
+    color: var(--text);
+    background-color: var(--primary);
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.wrong {
+    border: 2px solid var(--error);
+}
+
+.error {
+    margin-bottom: 12px;
+}
+
+#wrongCredential {
+    color: var(--error);
+    margin-top: 50px;
+}
