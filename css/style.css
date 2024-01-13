@@ -194,15 +194,23 @@ header .edit {
     margin-left: var(--base-spacing);
 }
 
-.movie-list > li > div {
+.movie-list > li div {
     height: 148px;
     background-color: #C6BAEC;
     border-radius: 16px;
 }
 
-.movie-list > li > p {
+.movie-list > li p {
     text-align: center;
     font-size: 0.85em;
+}
+
+.movie-list a {
+    color: var(--text);
+}
+
+.movie-list a:not(:hover) {
+    text-decoration: none;
 }
 
 .movie-grid {
