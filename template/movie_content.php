@@ -17,10 +17,10 @@ if (!isset($movie)) {
         <div class="col-right">
             <h1><?php echo $movie->Title ?></h1>
             <p>
-                <span><?php echo dateToYear($movie->Released) . " • " . $movie->Runtime ?></span>
+                <span><?php echo date_to_year($movie->Released) . " • " . $movie->Runtime ?></span>
                 <span lang="en"><?php echo $movie->Genre ?></span>
             </p>
-            <div class="stars stars-<?php echo ratingToStars($movie->Metascore) ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>
+            <div class="stars stars-<?php echo rating_to_stars($movie->Metascore) ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>
             <a class="watchlist-add in-watchlist" href="#"
                 onclick="toggleClass(this, 'in-watchlist')"><svg></svg>Aggiungi a watchlist</a>
         </div>
