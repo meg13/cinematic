@@ -23,6 +23,10 @@
         margin-bottom: calc(var(--base-spacing) * 2);
     }
 
+    nav svg {
+        display: none;
+    }
+
     .col-left {
         flex: 6; /* 60% width */
         margin: 0 48px;

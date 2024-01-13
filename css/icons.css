@@ -6,16 +6,19 @@ svg {
     vertical-align: middle;
 }
 
-.watched svg {
-    background-color: var(--confirm);
-    mask-image: url('../svg/tick.svg');
-    -webkit-mask-image: url('../svg/tick.svg');
-}
-
 .unwatched svg, .watchlist-add svg {
     background-color: var(--text);
     mask-image: url('../svg/add.svg');
     -webkit-mask-image: url('../svg/add.svg');
+}
+
+.watched svg, .in-watchlist svg {
+    mask-image: url('../svg/tick.svg');
+    -webkit-mask-image: url('../svg/tick.svg');
+}
+
+.watched svg {
+    background-color: var(--confirm);
 }
 
 .watchlist-add svg {
@@ -44,3 +47,46 @@ svg {
     -webkit-mask-image: url('/svg/filledHeart.svg');
 }
 
+nav svg {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    background-color: var(--text);
+}
+
+nav .home-icon {
+    mask-image: url('../svg/home.svg');
+    -webkit-mask-image: url('../svg/home.svg');
+}
+
+nav .search-icon {
+    mask-image: url('../svg/search.svg');
+    -webkit-mask-image: url('../svg/search.svg');
+}
+
+nav .profile-icon {
+    mask-image: url('../svg/profile.svg');
+    -webkit-mask-image: url('../svg/profile.svg');
+}
+
+nav .bell-icon {
+    mask-image: url('../svg/bell.svg');
+    -webkit-mask-image: url('../svg/bell.svg');
+}
+
+.stars svg {
+    width: 16px;
+    height: 15px;
+    background-color: var(--primary);
+    mask-image: url('../svg/starempty.svg');
+    -webkit-mask-image: url('../svg/starempty.svg');
+}
+
+:is(.stars-1, .stars-2, .stars-3, .stars-4, .stars-5) svg:first-child,
+:is(.stars-2, .stars-3, .stars-4) svg:nth-child(2),
+:is(.stars-3, .stars-4) svg:nth-child(3),
+:is(.stars-4) svg:nth-child(4),
+.stars-5 svg {
+    mask-image: url('../svg/starfill.svg');
+    -webkit-mask-image: url('../svg/starfill.svg');
+}
