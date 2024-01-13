@@ -238,15 +238,16 @@ header + form {
 }
 
 .notification-list li {
-    background-color: var(--overlay1);
-    padding: var(--base-spacing);
     margin-bottom: var(--base-spacing);
-    border-radius: 16px;
 }
 
 .notification-list a {
+    display: block;
     text-decoration: none;
+    background-color: var(--overlay1);
     color: var(--text);
+    padding: var(--base-spacing);
+    border-radius: 16px;
 }
 
 /* Movie */
