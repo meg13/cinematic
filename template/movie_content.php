@@ -5,7 +5,6 @@ if (!isset($movie)) {
     die("Movie not set");
 }
 
-require("util/movie_utils.php");
 ?>
 
 <section class="col-left">

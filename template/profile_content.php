@@ -20,12 +20,7 @@ if (!isset($profile)) {
     <section>
         <h2>Visti</h2>
         <ul class="movie-list">
-            <li>
-                <a href="#">
-                    <div></div>
-                    <p>Titolo Film</p>
-                </a>
-            </li>
+            <?php $_GET["movieid"] = "tt1375666"; require("movie_element.php") ?>
             <li>
                 <div></div>
                 <p>Titolo Film</p>

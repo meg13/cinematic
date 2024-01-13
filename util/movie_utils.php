@@ -19,4 +19,18 @@ function ratingToStars($rating) {
     return round($rating / 20);
 }
 
+function movie_from_id($id) {
+    if (!isset($id)) {
+        die("Movie ID not set");
+    }
+    
+    $movie = omdb_get_movie_by_id($id);
+    
+    if (!$movie) {
+        die("Invalid ID");
+    }
+
+    return $movie;
+}
+
 ?>
