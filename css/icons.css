@@ -27,24 +27,24 @@ svg {
 
 .comment-button svg {
     background-color: var(--text);
-    mask-image: url('/svg/comment.svg');
-    -webkit-mask-image: url('/svg/comment.svg');
+    mask-image: url('../svg/comment.svg');
+    -webkit-mask-image: url('../svg/comment.svg');
 }
 
 .unliked svg {
     width: 16px;
     height: 15px;
     background-color: var(--text);
-    mask-image: url('/svg/emptyheart.svg');
-    -webkit-mask-image: url('/svg/emptyheart.svg');
+    mask-image: url('../svg/emptyheart.svg');
+    -webkit-mask-image: url('../svg/emptyheart.svg');
 }
 
 .liked svg {
     width: 18px;
     height: 18px;
     background-color: var(--primary);
-    mask-image: url('/svg/filledHeart.svg');
-    -webkit-mask-image: url('/svg/filledHeart.svg');
+    mask-image: url('../svg/filledHeart.svg');
+    -webkit-mask-image: url('../svg/filledHeart.svg');
 }
 
 nav svg {

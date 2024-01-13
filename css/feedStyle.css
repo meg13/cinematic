@@ -10,11 +10,6 @@
     --base-spacing: 16px;
 }
 
-header > h1 {
-    margin-top: var(--base-spacing);
-    display: inline;
-}
-
 section:first-child {
     margin-bottom: 32px;
 }
