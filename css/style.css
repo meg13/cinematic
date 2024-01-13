@@ -270,6 +270,10 @@ header + form {
     margin-top: 8px;
 }
 
+.movie-description p {
+    line-height: 1.6;
+}
+
 .movie-header span, .movie-description .weak {
     display: block;
     line-height: 1.5;
