@@ -32,9 +32,9 @@ function toggleBioEdit(editButton) {
         // Start editing
         bioParagraph.style.display = 'none'
 
-        form = document.createElement('form');
-        form.action = "#" // TODO action
-        form.method = "post"
+        bioForm = document.createElement('form');
+        bioForm.action = "#" // TODO action
+        bioForm.method = "post"
 
         const label = document.createElement('label');
         label.for = 'bio';
@@ -47,16 +47,16 @@ function toggleBioEdit(editButton) {
         bioTextArea.placeholder = 'Qualcosa su di te...';
         bioTextArea.value = bioParagraph.innerText.trim();
 
-        form.appendChild(label);
-        form.appendChild(bioTextArea);
-        bio.insertBefore(form, bioParagraph);
+        bioForm.appendChild(label);
+        bioForm.appendChild(bioTextArea);
+        bio.insertBefore(bioForm, bioParagraph);
         bioTextArea.focus();
     } else {
         // End editing
         bioParagraph.style.display = ''
         bioParagraph.innerText = bioTextArea.value;
-        form.submit();
-        form.remove();
+        ajaxSubmit(bioForm);
+        bioForm.remove();
     }
 }
 
