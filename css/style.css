@@ -73,6 +73,12 @@ header a, nav a {
     margin-top: 0;
 }
 
+textarea:focus {
+    resize: none;
+    outline: none;
+    caret-color: var(--text);
+}
+
 /* Navbar */
 
 nav {
