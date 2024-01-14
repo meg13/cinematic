@@ -5,22 +5,34 @@ if (!isset($profile)) {
     die("Profile not set");
 }
 
+// TODO check if $profile is the same as logged user
+$is_self = true;
+
 ?>
 
 <section class="col-left">
     <header>
-        <h1><?php echo $profile["username"] ?></h1>
-        <a class="follow" href="#" onclick="toggleClass(this, 'following', 'Following', 'Follow')">Follow</a>
+        <h1>
+            <?php echo $profile["username"] ?>
+        </h1>
+        <?php if ($is_self): ?>
+            <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
+        <?php else: ?>
+            <a class="follow" href="#" onclick="toggleClass(this, 'following', 'Seguito', 'Segui')">Segui</a>
+        <?php endif ?>
     </header>
     <div class="bio">
-        <p><?php echo $profile["bio"] ?></p>
+        <p>
+            <?php echo $profile["bio"] ?>
+        </p>
         <p><strong>10</strong> followers</p>
         <p><strong>10</strong> seguiti</p>
     </div>
     <section>
         <h2>Visti</h2>
         <ul class="movie-list">
-            <?php $_GET["movieid"] = "tt1375666"; require("movie_element.php") ?>
+            <?php $_GET["movieid"] = "tt1375666";
+            require("movie_element.php") ?>
             <li>
                 <div></div>
                 <p>Titolo Film</p>

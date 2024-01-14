@@ -162,6 +162,19 @@ header .edit {
     line-height: 1.4;
 }
 
+.bio form {
+    display: block;
+    margin-right: var(--base-spacing);
+}
+
+.bio form label {
+    font-weight: bold;
+}
+
+.bio form textarea {
+    margin: 10px 0;
+}
+
 /* Bio text */
 .bio p:first-child {
     display: block;
