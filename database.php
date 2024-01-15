@@ -73,6 +73,12 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function writePost($user, $body, $movie_id, $stars) {
+        $stmt = $this->db->prepare("INSERT INTO Posts (post_id, user_id, body) VALUES (?, ?, ?)");
+        $stmt->bind_param('iss', $post, $user, $comment);
+        $stmt->execute();
+    }
+
     public function getWatchlist($user) {
         $stmt = $this->db->prepare("SELECT Movies.* FROM Movies JOIN ToWatch ON Movies.movie_id = ToWatch.movie_id WHERE ToWatch.user_id = ? ORDER BY Movies.title ASC;");
         $stmt->bind_param('s', $user);
@@ -89,7 +95,7 @@ class DatabaseHelper{
     }
 
     public function deleteFromWatchlist($user, $movie_id) {
-        $stmt = $this->db->prepare("DELETE FROM ToWatch WHERE user_id = ?, movie_id = ?");
+        $stmt = $this->db->prepare("DELETE FROM ToWatch WHERE user_id = ? AND movie_id = ?");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
 
@@ -105,13 +111,13 @@ class DatabaseHelper{
     }
 
     public function addToWatched($user, $movie_id ) {
-        $stmt = $this->db->prepare("INSERT INTO Watched (user_id, movie_id) VALUES (?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO Watched (user_id, movie_id, date) VALUES (?, ?, NOW())");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
     }
 
     public function deleteFromToWatched($user, $movie_id) {
-        $stmt = $this->db->prepare("DELETE FROM Watched WHERE user_id = ?, movie_id = ?");
+        $stmt = $this->db->prepare("DELETE FROM Watched WHERE user_id = ? AND movie_id = ?");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
     }
@@ -153,6 +159,12 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function notificationRead($notif_id) {
+        $stmt = $this->db->prepare("UPDATE Notifications N SET N.read = TRUE WHERE N.notif_id = ?");
+        $stmt->bind_param('i', $notif_id);
+        $stmt->execute();
     }
 
     
