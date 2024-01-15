@@ -1,9 +1,6 @@
 <?php
 
 $movies = $template["movies"];
-if (!isset($movies)) {
-    die("Movies data not set.");
-}
 
 ?>
 
@@ -11,10 +8,14 @@ if (!isset($movies)) {
     <header>
         <h1>Ricerca</h1>
     </header>
-    <form action="#" style="height: 40px; background-color: green;"></form>
+    <form action="#">
+        <label for="s" hidden>Cerca</label>
+        <input type="text" id="s" name="s" placeholder="Cerca un film..." rows="1" autofocus <?php if (isset($query)) echo 'value="' . $query . '"' ?> onfocus="moveCursorToEnd(this)"></input>
+        <input type="submit" value="Cerca">
+    </form>
     <ul class="movie-list movie-grid">
         <?php
-        if (isset($query)) {
+        if (isset($movies)) {
             foreach ($movies as $movie) {
                 $_GET["movie"] = $movie;
                 require("movie_element.php");

@@ -73,8 +73,12 @@ header a, nav a {
     margin-top: 0;
 }
 
-textarea:focus {
+textarea {
     resize: none;
+    line-height: 1.6;
+}
+
+textarea:focus, input {
     outline: none;
     caret-color: var(--text);
 }
@@ -420,27 +424,29 @@ form {
     align-self: stretch;
 }
 
-form > textarea{
-    width: 100%;
+form > textarea, form > input {
     border-radius: 8px;
     font-family: "Rubik", "Arial", sans-serif;
     color: var(--text);
-    background: var(--overlay2);
-    border: none;
     padding: 12px;
-    margin-right: 8px;
-    resize: none;
-    line-height: 16px;
+    border: none;
 }
 
-form > input {
-    border-radius: 8px;
-    color: var(--text);
-    font-family: "Rubik", "Arial", sans-serif;
+form > textarea, form > input:not([type=submit]) {
+    width: 100%;
+    background: var(--overlay2);
+    margin-right: 8px;
+}
+
+form > input[type=submit] {
     background: var(--primary);
-    padding: 12px;
     margin: 0;
     border: none;
+    cursor: pointer;
+}
+
+form > input[type=submit][value=Cerca] {
+    padding: 12px 24px;
 }
 
 .write-a-post > form {
@@ -451,14 +457,10 @@ form > input {
     padding: 0;
 }
 
-.write-a-post > form > textarea{
+.write-a-post > form > textarea {
     box-sizing: border-box;
     margin-bottom: 14px;
     margin-right: 0;
-}
-
-input[type=submit] {
-    cursor: pointer;
 }
 
 .post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg{
