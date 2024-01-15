@@ -100,7 +100,7 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    private function addMovie($movie_id, $title) {
+    public function addMovie($movie_id, $title) {
         $stmt = $this->db->prepare("INSERT INTO Movies (movie_id, title) VALUES (?, ?)");
         $stmt->bind_param('ss', $movie_id, $title);
         $stmt->execute();
