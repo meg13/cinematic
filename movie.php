@@ -14,6 +14,8 @@ if (!$movie) {
     die("Invalid ID");
 }
 
+$dbh->addMovie($movie->imdbID, $movie->Title);
+
 $template["title"] = "Film";
 $template["content"] = "movie_content.php";
 $template["movie"] = $movie;
