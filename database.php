@@ -74,8 +74,8 @@ class DatabaseHelper{
     }
 
     public function writePost($user, $body, $movie_id, $stars) {
-        $stmt = $this->db->prepare("INSERT INTO Posts (post_id, user_id, body) VALUES (?, ?, ?)");
-        $stmt->bind_param('iss', $post, $user, $comment);
+        $stmt = $this->db->prepare("INSERT INTO Posts (body, user_id, movie_id, stars, date) VALUES (?, ?, ?, ?, NOW())");
+        $stmt->bind_param('sssi', $body, $user, $movie_id, $stars);
         $stmt->execute();
     }
 
@@ -128,12 +128,12 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
 
-    public function updateBio($user, $bio) {
+    public function updateBio($user) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
-        $stmt->bind_param('ss', $bio, $user);
+        $stmt->bind_param('s', $user);
         $stmt->execute();
     }
 
@@ -152,7 +152,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getNotifications($user){
+    public function getNotifications($user) {
         $stmt = $this->db->prepare("SELECT N.responsable_user_id, N.type, N.post_id, N.read  FROM Notifications N WHERE N.receiving_user_id = ? ORDER BY ");
         $stmt->bind_param('s', $user);
         $stmt->execute();
@@ -165,6 +165,28 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("UPDATE Notifications N SET N.read = TRUE WHERE N.notif_id = ?");
         $stmt->bind_param('i', $notif_id);
         $stmt->execute();
+    }
+
+    public function alreadyRegistered($user) {
+        $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.username = ?");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function logInControl($email, $password) {
+        $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.email = ? AND U.password = ?");
+        $stmt->bind_param('ss', $email, $password);
+        $stmt->execute();
+        $stmt->store_result();
+
+        return $stmt->num_rows > 0;
     }
 
     
