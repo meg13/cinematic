@@ -5,8 +5,8 @@ if (!isset($username)) {
     die("Username not set");
 }
 
-// TODO check if $profile is the same as logged user
-$is_self = true;
+// Whether this is the user's own page (case insensitive comparison)
+$is_self = strcasecmp($username, get_logged_in_username()) == 0;
 
 ?>
 
@@ -23,59 +23,36 @@ $is_self = true;
     </header>
     <div class="bio">
         <p>
-            <?php echo $dbh->getUserBio($username)["bio"] ?? "" ?>
+            <?php echo $template["bio"] ?>
         </p>
         <p><strong>10</strong> followers</p>
         <p><strong>10</strong> seguiti</p>
     </div>
+    <?php if (!empty($template["watched_movies"])): ?>
     <section>
         <h2>Visti</h2>
         <ul class="movie-list">
-            <?php $_GET["movieid"] = "tt1375666";
-            require("movie_element.php") ?>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
+            <?php
+            foreach ($template["watched_movies"] as $movie) {
+                $_GET["movieid"] = $movie["movie_id"];
+                require("movie_element.php");
+            }
+            ?>
         </ul>
     </section>
+    <?php endif; if (!empty($template["watchlist_movies"])): ?>
     <section>
         <h2>Da vedere</h2>
         <ul class="movie-list">
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
-            <li>
-                <div></div>
-                <p>Titolo Film</p>
-            </li>
+            <?php
+            foreach ($template["watchlist_movies"] as $movie) {
+                $_GET["movieid"] = $movie["movie_id"];
+                require("movie_element.php");
+            }
+            ?>
         </ul>
     </section>
+    <?php endif ?>
 </section>
 <section class="col-right">
     <h2>Post</h2>
