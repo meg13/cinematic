@@ -6,7 +6,7 @@ if (!isset($profile)) {
 }
 
 // TODO check if $profile is the same as logged user
-$is_self = false;
+$is_self = true;
 
 ?>
 
@@ -23,7 +23,7 @@ $is_self = false;
     </header>
     <div class="bio">
         <p>
-            <?php echo $profile["bio"] ?>
+            <?php echo $dbh->getUserBio($profile["username"])["bio"] ?? "" ?>
         </p>
         <p><strong>10</strong> followers</p>
         <p><strong>10</strong> seguiti</p>
