@@ -122,6 +122,24 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function isInWatchlist($user, $movie_id) {
+        $stmt = $this->db->prepare("SELECT * FROM ToWatch W WHERE W.user_id = ? AND W.movie_id = ?");
+        $stmt->bind_param('ss', $user, $movie_id);
+        $stmt->execute();
+        $stmt->store_result();
+
+        return $stmt->num_rows > 0;
+    }
+
+    public function isWatched($user, $movie_id) {
+        $stmt = $this->db->prepare("SELECT * FROM ToWatch W WHERE W.user_id = ? AND W.movie_id = ?");
+        $stmt->bind_param('ss', $user, $movie_id);
+        $stmt->execute();
+        $stmt->store_result();
+
+        return $stmt->num_rows > 0;
+    }
+
     public function getUserBio($user) {
         $stmt = $this->db->prepare("SELECT U.bio FROM Users U WHERE U.username = ?");
         $stmt->bind_param('s', $user);
@@ -131,9 +149,9 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
 
-    public function updateBio($user) {
+    public function updateBio($user, $bio) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
-        $stmt->bind_param('s', $user);
+        $stmt->bind_param('ss', $bio, $user);
         $stmt->execute();
     }
 
