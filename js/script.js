@@ -2,17 +2,31 @@
  * Adds/remove a style class
  * @param {*} element target element
  * @param {*} className class to toggle
- * @param {*} contentOn (optional) HTML content to set when the class is added
- * @param {*} contentOff (optional) HTML content to set when the class is removed
+ * @param {*} whenOn (optional) action to run when the class is added
+ * @param {*} whenOffOff (optional) action to run when the class is removed
  */
-function toggleClass(element, className, contentOn, contentOff) {
+function toggleClass(element, className, whenOn, whenOff) {
     if (element.classList.contains(className)) {
         element.classList.remove(className);
-        if (contentOff) element.innerHTML = contentOff;
+        if (whenOff) whenOff();
     } else {
         element.classList.add(className);
-        if (contentOn) element.innerHTML = contentOn;
+        if (whenOn) whenOn();
     }
+}
+
+function toggleFollow(followButton) {
+    toggleClass(followButton, "following",
+        () => followButton.innerHTML = "Seguito",
+        () => followButton.innerHTML = "Segui"
+    );
+}
+
+function toggleWatchlistAdd(watchlistButton, movieID) {
+    toggleClass(watchlistButton, "in-watchlist",
+        () => ajaxGet("api/watchlist_add.php?movieid=" + movieID),
+        () => ajaxGet("api/watchlist_remove.php?movieid=" + movieID)
+    );
 }
 
 let bioForm;

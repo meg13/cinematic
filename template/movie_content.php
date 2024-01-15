@@ -22,7 +22,7 @@ if (!isset($movie)) {
             </p>
             <div class="stars stars-<?php echo rating_to_stars($movie->Metascore) ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>
             <a class="watchlist-add in-watchlist" href="#"
-                onclick="toggleClass(this, 'in-watchlist')"><svg></svg>Aggiungi a watchlist</a>
+                onclick="toggleWatchlistAdd(this, '<?php echo $movie->imdbID ?>')"><svg></svg>Aggiungi a watchlist</a>
         </div>
     </header>
     <div class="movie-description">

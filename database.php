@@ -89,7 +89,7 @@ class DatabaseHelper{
     }
 
     public function deleteFromWatchlist($user, $movie_id) {
-        $stmt = $this->db->prepare("DELETE FROM ToWatch WHERE user_id = ?, movie_id = ?");
+        $stmt = $this->db->prepare("DELETE FROM ToWatch WHERE user_id = ? AND movie_id = ?");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
 

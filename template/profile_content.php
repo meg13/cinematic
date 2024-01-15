@@ -6,7 +6,7 @@ if (!isset($profile)) {
 }
 
 // TODO check if $profile is the same as logged user
-$is_self = true;
+$is_self = false;
 
 ?>
 
@@ -18,7 +18,7 @@ $is_self = true;
         <?php if ($is_self): ?>
             <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
         <?php else: ?>
-            <a class="follow" href="#" onclick="toggleClass(this, 'following', 'Seguito', 'Segui')">Segui</a>
+            <a class="follow" href="#" onclick="toggleFollow(this)">Segui</a>
         <?php endif ?>
     </header>
     <div class="bio">
