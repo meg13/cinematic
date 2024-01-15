@@ -58,6 +58,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPostComments($post) {
+        $stmt = $this->db->prepare("SELECT C.user_id, C.body, C. FROM Comments C WHERE C.post_id = ?");
+        $stmt->bind_param('i', $post);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function writeComment($post, $user, $comment) {
         $stmt = $this->db->prepare("INSERT INTO Comments (post_id, user_id, body) VALUES (?, ?, ?)");
         $stmt->bind_param('iss', $post, $user, $comment);
@@ -73,10 +82,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
-    public function addToWatchlist($user, $movie_id ) {
+    public function addToWatchlist($user, $movie_id) {
         $stmt = $this->db->prepare("INSERT INTO ToWatch (user_id, movie_id) VALUES (?, ?)");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
+    }
+
+    public function deleteFromWatchlist($user, $movie_id) {
+        $stmt = $this->db->prepare("DELETE FROM ToWatch WHERE user_id = ?, movie_id = ?");
+        $stmt->bind_param('ss', $user, $movie_id);
+        $stmt->execute();
+
     }
 
     public function getWatchedMovies($user) {
@@ -94,6 +110,21 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function deleteFromToWatched($user, $movie_id) {
+        $stmt = $this->db->prepare("DELETE FROM Watched WHERE user_id = ?, movie_id = ?");
+        $stmt->bind_param('ss', $user, $movie_id);
+        $stmt->execute();
+    }
+
+    public function getUserBio($user) {
+        $stmt = $this->db->prepare("SELECT U.bio FROM Users U WHERE U.username = ?");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function updateBio($user) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
         $stmt->bind_param('s', $user);
@@ -101,9 +132,33 @@ class DatabaseHelper{
     }
 
     public function addMovie($movie_id, $title) {
-        $stmt = $this->db->prepare("INSERT INTO Movies (movie_id, title) VALUES (?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO Movies (movie_id, title) VALUES (?, ?) ON DUPLICATE KEY UPDATE title = VALUES(title)");
         $stmt->bind_param('ss', $movie_id, $title);
         $stmt->execute();
     }
+
+    public function getMoviePost($movie_id){
+        $stmt = $this->db->prepare("SELECT P.body, P.user_id, P.stars FROM Posts P JOIN Movies M ON P.movie_id = M.movie_id WHERE M.movie_id = ? ORDER BY P.date DESC");
+        $stmt->bind_param('s', $movie_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNotifications($user){
+        $stmt = $this->db->prepare("SELECT N.responsable_user_id, N.type, N.post_id, N.read  FROM Notifications N WHERE N.receiving_user_id = ? ORDER BY ");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    
+    
+
+
+    
 
 }
