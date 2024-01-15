@@ -1,8 +1,8 @@
 <?php
 
-$profile = $template["profile"];
-if (!isset($profile)) {
-    die("Profile not set");
+$username = $template["username"];
+if (!isset($username)) {
+    die("Username not set");
 }
 
 // TODO check if $profile is the same as logged user
@@ -13,7 +13,7 @@ $is_self = true;
 <section class="col-left">
     <header>
         <h1>
-            <?php echo $profile["username"] ?>
+            <?php echo $username ?>
         </h1>
         <?php if ($is_self): ?>
             <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
@@ -23,7 +23,7 @@ $is_self = true;
     </header>
     <div class="bio">
         <p>
-            <?php echo $dbh->getUserBio($profile["username"])["bio"] ?? "" ?>
+            <?php echo $dbh->getUserBio($username)["bio"] ?? "" ?>
         </p>
         <p><strong>10</strong> followers</p>
         <p><strong>10</strong> seguiti</p>

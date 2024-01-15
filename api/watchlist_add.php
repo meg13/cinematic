@@ -2,8 +2,6 @@
 
 require("api.php");
 
-$username = "test"; // TODO get from session
-
-$dbh->addToWatchlist($username, $_GET["movieid"]);
+$dbh->addToWatchlist(get_logged_in_username(), $_GET["movieid"]);
 
 ?>

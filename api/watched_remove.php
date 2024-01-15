@@ -2,8 +2,6 @@
 
 require("api.php");
 
-$username = "test"; // TODO get from session
-
-$dbh->deleteFromToWatched($username, $_GET["movieid"]);
+$dbh->deleteFromToWatched(get_logged_in_username(), $_GET["movieid"]);
 
 ?>

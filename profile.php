@@ -2,14 +2,9 @@
 
 require_once("bootstrap.php");
 
-$profile = array(
-    "username" => "test",
-    "bio" => "Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. Vehicula tellus volutpat habitant convallis egestas ac arcu. Adictumst risus scelerisque nulla quis.",
-); // TODO get from db
-
-$template["title"] = $profile["username"];
 $template["content"] = "profile_content.php";
-$template["profile"] = $profile;
+$template["username"] = get_logged_in_username();
+$template["title"] = $template["username"];
 
 require("template/base.php");
 
