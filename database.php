@@ -46,7 +46,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["LikesCount"];
     }
 
     public function getCommentCount($post) {
@@ -55,7 +55,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["CommentsCount"];
     }
 
     public function getPostComments($post) {
@@ -226,7 +226,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["following_number"];
     }
 
     //NUMERO PERSONE CHE SEGUONO UN UTENTE
@@ -236,7 +236,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["follower_number"];
     }
 
     public function getNumberOfUserHaveSeenMovie($user, $movie_id) {
@@ -245,7 +245,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["users_have_seen_movie"];
     }
 
 }
