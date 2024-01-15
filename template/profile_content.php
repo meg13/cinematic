@@ -22,8 +22,8 @@ if (!isset($username)) {
         <p>
             <?php echo $template["bio"] ?>
         </p>
-        <p><strong>10</strong> followers</p>
-        <p><strong>10</strong> seguiti</p>
+        <p><strong><?php echo $template["follower_count"] ?></strong> followers</p>
+        <p><strong><?php echo $template["followed_count"] ?></strong> seguiti</p>
     </div>
     <?php if (!empty($template["watched_movies"])): ?>
     <section>
