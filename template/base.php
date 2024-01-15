@@ -17,10 +17,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="feed.html"><svg class="home-icon"></svg>Home</a></li>
-            <li><a href="search.html"><svg class="search-icon"></svg>Cerca</a></li>
-            <li><a href="profile.html"><svg class="profile-icon"></svg>Profilo</a></li>
-            <li><a href="notifications.html"><svg class="bell-icon"></svg>Notifiche</a></li>
+            <li><a href="feed.php"><svg class="home-icon"></svg>Home</a></li>
+            <li><a href="search.php"><svg class="search-icon"></svg>Cerca</a></li>
+            <li><a href="profile.php"><svg class="profile-icon"></svg>Profilo</a></li>
+            <li><a href="notifications.php"><svg class="bell-icon"></svg>Notifiche</a></li>
         </ul>
     </nav>
     
