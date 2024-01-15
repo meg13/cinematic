@@ -421,7 +421,7 @@ form {
     display: flex;
     padding-top: 8px;
     align-items: center;
-    align-self: stretch;
+    align-self: normal;
 }
 
 form > textarea, form > input {

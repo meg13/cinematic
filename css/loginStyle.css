@@ -37,6 +37,7 @@ form > ul > li > label{
 
 form > ul {
     margin: 0;
+    width: 100%;
 }
 
 form > ul > li:not(:last-child) {
