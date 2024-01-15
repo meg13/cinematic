@@ -69,7 +69,7 @@ class DatabaseHelper{
 
     public function writeComment($post, $user, $comment) {
         $stmt = $this->db->prepare("INSERT INTO Comments (post_id, user_id, body) VALUES (?, ?, ?)");
-        $stmt->bind_param('isb', $post, $user, $comment);
+        $stmt->bind_param('iss', $post, $user, $comment);
         $stmt->execute();
     }
 
@@ -151,13 +151,13 @@ class DatabaseHelper{
 
     public function updateBio($user, $bio) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
-        $stmt->bind_param('bs', $bio, $user);
+        $stmt->bind_param('ss', $bio, $user);
         $stmt->execute();
     }
 
     public function addMovie($movie_id, $title) {
         $stmt = $this->db->prepare("INSERT INTO Movies (movie_id, title) VALUES (?, ?) ON DUPLICATE KEY UPDATE title = VALUES(title)");
-        $stmt->bind_param('sb', $movie_id, $title);
+        $stmt->bind_param('ss', $movie_id, $title);
         $stmt->execute();
     }
 

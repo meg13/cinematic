@@ -22,3 +22,15 @@ $post = $_GET["post"];
         </li>
     </ul>
 </footer>
+<div class="comment-section" > <!-- style="display: none;" -->
+    <hr>
+    <div>
+        <p>user1</p>
+        <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
+    </div>
+    <form>
+        <label for="write-comment" hidden>Scrivi un post</label>
+        <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
+        <input type="submit" value="Invia">
+    </form>
+</div>
