@@ -204,6 +204,7 @@ header .edit {
 }
 
 .movie-list > li {
+    vertical-align: top;
     display: inline-block;
     width: 100px;
     margin-right: var(--base-spacing);

@@ -27,8 +27,8 @@ function omdb_get_movie_by_id($id) {
     return omdb_get("i=" . $id);
 }
 
-function omdb_search_movie_by_title($title) {
-    return omdb_get("s=" . $title);
+function omdb_search_movies_by_title($title) {
+    return omdb_get("s=" . $title)->Search;
 }
 
 ?>
