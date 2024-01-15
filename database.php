@@ -73,7 +73,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
-    //TO DO
     public function addToWatchlist($user, $movie_id ) {
         $stmt = $this->db->prepare("INSERT INTO ToWatch (user_id, movie_id) VALUES (?, ?)");
         $stmt->bind_param('ss', $user, $movie_id);
@@ -89,7 +88,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    //TO DO
     public function addToWatched($user, $movie_id ) {
         $stmt = $this->db->prepare("INSERT INTO Watched (user_id, movie_id) VALUES (?, ?)");
         $stmt->bind_param('ss', $user, $movie_id);
@@ -101,7 +99,5 @@ class DatabaseHelper{
         $stmt->bind_param('s', $user);
         $stmt->execute();
     }
-
-
 
 }
