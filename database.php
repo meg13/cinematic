@@ -69,13 +69,13 @@ class DatabaseHelper{
 
     public function writeComment($post, $user, $comment) {
         $stmt = $this->db->prepare("INSERT INTO Comments (post_id, user_id, body) VALUES (?, ?, ?)");
-        $stmt->bind_param('iss', $post, $user, $comment);
+        $stmt->bind_param('isb', $post, $user, $comment);
         $stmt->execute();
     }
 
     public function writePost($user, $body, $movie_id, $stars) {
         $stmt = $this->db->prepare("INSERT INTO Posts (body, user_id, movie_id, stars, date) VALUES (?, ?, ?, ?, NOW())");
-        $stmt->bind_param('sssi', $body, $user, $movie_id, $stars);
+        $stmt->bind_param('bssi', $body, $user, $movie_id, $stars);
         $stmt->execute();
     }
 
@@ -151,13 +151,13 @@ class DatabaseHelper{
 
     public function updateBio($user, $bio) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
-        $stmt->bind_param('ss', $bio, $user);
+        $stmt->bind_param('bs', $bio, $user);
         $stmt->execute();
     }
 
     public function addMovie($movie_id, $title) {
         $stmt = $this->db->prepare("INSERT INTO Movies (movie_id, title) VALUES (?, ?) ON DUPLICATE KEY UPDATE title = VALUES(title)");
-        $stmt->bind_param('ss', $movie_id, $title);
+        $stmt->bind_param('sb', $movie_id, $title);
         $stmt->execute();
     }
 
@@ -211,6 +211,41 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("INSERT INTO Followership (following_user_id, followed_user_id) VALUES (?, ?)");
         $stmt->bind_param('ss', $user, $followedUser);
         $stmt->execute();
+    }
+
+    public function stopFollowingUser($user, $followedUser) {
+        $stmt = $this->db->prepare("DELETE FROM Followership WHERE following_user_id = ? AND followed_user_id = ?");
+        $stmt->bind_param('ss', $user, $followedUser);
+        $stmt->execute();
+    }
+
+    //NUMERO PERSONE CHE UN UTENTE SEGUE
+    public function getFollowedNumber($user) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS following_number FROM Followership WHERE following_user_id = ?");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    //NUMERO PERSONE CHE SEGUONO UN UTENTE
+    public function getFollowerNumber($user) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS follower_number FROM Followership WHERE followed_user_id = ?");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNumberOfUserHaveSeenMovie($user, $movie_id) {
+        $stmt = $this->db->prepare("SELECT COUNT(DISTINCT w.user_id) AS users_have_seen_movie FROM Followership f JOIN Watched w ON f.followed_user_id = w.user_id WHERE f.following_user_id = ? AND w.movie_id = ?");
+        $stmt->bind_param('ss', $user, $movie_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 }
