@@ -23,7 +23,7 @@ CREATE TABLE `Users` (
   `username` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255),
   `password` VARCHAR(255),
-  `bio` VARCHAR(255),
+  `bio` TEXT,
   CONSTRAINT `PK_Followership` PRIMARY KEY (`username`)
 );
 
