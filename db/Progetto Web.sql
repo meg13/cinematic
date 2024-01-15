@@ -10,8 +10,8 @@ USE ProgettoWeb;
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE `Followership` (
-  `following_user_id` INTEGER NOT NULL,
-  `followed_user_id` INTEGER NOT NULL,
+  `following_user_id` VARCHAR(255) NOT NULL,
+  `followed_user_id` VARCHAR(255) NOT NULL,
   CONSTRAINT `PK_Followership` PRIMARY KEY (`following_user_id`,`followed_user_id`)
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE `Users` (
 CREATE TABLE `Posts` (
   `post_id` INTEGER NOT NULL AUTO_INCREMENT,
   `body` TEXT,
-  `user_id` INTEGER,
+  `user_id` VARCHAR(255),
   `movie_id` VARCHAR(255),
   `stars` INTEGER,
   `date` DATETIME,
@@ -48,7 +48,7 @@ CREATE TABLE `Posts` (
 CREATE TABLE `Comments` (
   `comment_id` INTEGER NOT NULL AUTO_INCREMENT,
   `post_id` INTEGER,
-  `user_id` INTEGER,
+  `user_id` VARCHAR(255),
   `body` TEXT,
   CONSTRAINT `PK_Comments` PRIMARY KEY (`comment_id`)
 );
@@ -69,8 +69,8 @@ CREATE TABLE `Movies` (
 
 CREATE TABLE `Notifications` (
   `notif_id` INTEGER NOT NULL AUTO_INCREMENT,
-  `receiving_user_id` INTEGER,
-  `responsable_user_id` INTEGER,
+  `receiving_user_id` VARCHAR(255),
+  `responsable_user_id` VARCHAR(255),
   `type` ENUM('L','P','C','F'),
   `post_id` INTEGER,
   `date` DATETIME,
@@ -83,7 +83,7 @@ CREATE TABLE `Notifications` (
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE `ToWatch` (
-  `user_id` INTEGER,
+  `user_id` VARCHAR(255),
   `movie_id` VARCHAR(255),
   CONSTRAINT `PK_toWatch` PRIMARY KEY (`user_id`, `movie_id`)
 );
@@ -93,7 +93,7 @@ CREATE TABLE `ToWatch` (
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE `Watched` (
-  `user_id` INTEGER,
+  `user_id` VARCHAR(255),
   `movie_id` VARCHAR(255),
   `date` DATETIME,
   CONSTRAINT `PK_Watched` PRIMARY KEY (`user_id`, `movie_id`)
@@ -104,7 +104,7 @@ CREATE TABLE `Watched` (
 # ---------------------------------------------------------------------- #
 
 CREATE TABLE `Likes` (
-  `user_id` INTEGER,
+  `user_id` VARCHAR(255),
   `post_id` INTEGER,
   CONSTRAINT `PK_Likes` PRIMARY KEY (`user_id`, `post_id`)
 );
