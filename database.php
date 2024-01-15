@@ -132,7 +132,7 @@ class DatabaseHelper{
     }
 
     public function isWatched($user, $movie_id) {
-        $stmt = $this->db->prepare("SELECT * FROM ToWatch W WHERE W.user_id = ? AND W.movie_id = ?");
+        $stmt = $this->db->prepare("SELECT * FROM Watched W WHERE W.user_id = ? AND W.movie_id = ?");
         $stmt->bind_param('ss', $user, $movie_id);
         $stmt->execute();
         $stmt->store_result();
@@ -207,10 +207,10 @@ class DatabaseHelper{
         return $stmt->num_rows > 0;
     }
 
-    
-    
-
-
-    
+    public function followUser($user, $followedUser) {
+        $stmt = $this->db->prepare("INSERT INTO Followership (following_user_id, followed_user_id) VALUES (?, ?)");
+        $stmt->bind_param('ss', $user, $followedUser);
+        $stmt->execute();
+    }
 
 }
