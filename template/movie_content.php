@@ -30,7 +30,7 @@ if (!isset($movie)) {
         <p class="weak">Regista: <?php echo $movie->Director ?></p>
         <p>Visto da <strong>10</strong> persone che segui</p> <!-- TODO -->
     </div>
-    <div class="unwatched"><a href="#" onclick="toggleClass(this.parentElement, 'watched')"><svg></svg>Visto</a></div>
+    <div class="unwatched"><a href="#" onclick="toggleWatchedAdd(this.parentElement, '<?php echo $movie->imdbID ?>')"><svg></svg>Visto</a></div>
 </section>
 <section class="col-right">
     <h2>Post</h2>

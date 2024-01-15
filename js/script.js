@@ -29,6 +29,13 @@ function toggleWatchlistAdd(watchlistButton, movieID) {
     );
 }
 
+function toggleWatchedAdd(watchedButton, movieID) {
+    toggleClass(watchedButton, "watched",
+        () => ajaxGet("api/watched_add.php?movieid=" + movieID),
+        () => ajaxGet("api/watched_remove.php?movieid=" + movieID)
+    );
+}
+
 let bioForm;
 let bioTextArea;
 
