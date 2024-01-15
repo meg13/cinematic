@@ -131,9 +131,9 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function updateBio($user) {
+    public function updateBio($user, $bio) {
         $stmt = $this->db->prepare("UPDATE Users SET bio = ? WHERE username = ?");
-        $stmt->bind_param('s', $user);
+        $stmt->bind_param('ss', $bio, $user);
         $stmt->execute();
     }
 
