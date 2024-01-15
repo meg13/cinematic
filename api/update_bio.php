@@ -2,8 +2,6 @@
 
 require("api.php");
 
-$username = "test"; // TODO get from session
-
-$dbh->updateBio($username, $_POST["bio"]);
+$dbh->updateBio(get_logged_in_username(), $_POST["bio"]);
 
 ?>
