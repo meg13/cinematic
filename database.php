@@ -269,8 +269,8 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC)[0]["users_have_seen_movie"];
     }
 
-    public function getUser($user) {
-        $stmt = $this->db->prepare("SELECT * FROM Users WHERE username = ?");
+    public function searchUsers($user) {
+        $stmt = $this->db->prepare("SELECT username FROM Users WHERE username = CONCAT(?, '%')");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
