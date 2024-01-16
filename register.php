@@ -17,6 +17,7 @@ if($dbh->alreadyRegistered($_POST['username'])) {
 		echo 'Username exists, please choose another!';
 } else {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    
 }
 
 
