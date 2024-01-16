@@ -2,6 +2,8 @@
 
 $debug = $_GET["debug"] ?? false;
 
+ini_set('display_errors', 0);
+
 if ($debug) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
