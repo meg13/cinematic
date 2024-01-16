@@ -44,5 +44,10 @@ $id = $movie->imdbID;
     <?php
         $_GET["movie_id"] = $id;
         require("write_post_element.php");
+
+        foreach ($template["posts"] as $post) {
+            $_GET["post"] = $post;
+            require("post_element.php");
+        }
     ?>
 </section>

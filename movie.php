@@ -24,6 +24,7 @@ $template["movie"] = $movie;
 $template["in_watchlist"] = $dbh->isInWatchlist(get_logged_in_username(), $movie_id);
 $template["in_watched"] = $dbh->isWatched(get_logged_in_username(), $movie_id);
 $template["followed_watched_count"] = $dbh->getNumberOfUserHaveSeenMovie(get_logged_in_username(), $movie_id);
+$template["posts"] = $dbh->getMoviePost($movie_id);
 
 require("template/base.php");
 
