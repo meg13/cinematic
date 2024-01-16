@@ -185,6 +185,18 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function newNotificationForPost($receiving_user_id, $responsable_user_id, $type, $post) {
+        $stmt = $this->db->prepare("INSERT INTO Notifications (receiving_user_id, responsable_user_id, type, post_id, date, `read`) VALUES (?, ?, ?, ?, NOW(), 0)");
+        $stmt->bind_param('sssi', $receiving_user_id, $responsable_user_id, $type, $post);
+        $stmt->execute();
+    }
+
+    public function newNotificationNotPost($receiving_user_id, $responsable_user_id, $type) {
+        $stmt = $this->db->prepare("INSERT INTO Notifications (receiving_user_id, responsable_user_id, type, date, `read`) VALUES (?, ?, ?, NOW(), 0)");
+        $stmt->bind_param('sss', $receiving_user_id, $responsable_user_id, $type);
+        $stmt->execute();
+    }
+
     public function alreadyRegistered($user) {
         $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.username = ?");
         $stmt->bind_param('s', $user);
@@ -219,6 +231,15 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function checkFollowUser($user, $followedUser) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS conta FROM Followership WHERE following_user_id = ? AND followed_user_id = ?");
+        $stmt->bind_param('ss', $user, $followedUser);
+        $stmt->execute();
+        $stmt->store_result();
+
+        return $stmt->num_rows > 0;
+    }
+
     //NUMERO PERSONE CHE UN UTENTE SEGUE
     public function getFollowedNumber($user) {
         $stmt = $this->db->prepare("SELECT COUNT(*) AS following_number FROM Followership WHERE following_user_id = ?");
@@ -246,6 +267,15 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC)[0]["users_have_seen_movie"];
+    }
+
+    public function getUser($user) {
+        $stmt = $this->db->prepare("SELECT * FROM Users WHERE username = ?");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 }

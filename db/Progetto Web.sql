@@ -108,3 +108,4 @@ CREATE TABLE `Likes` (
   `post_id` INTEGER,
   CONSTRAINT `PK_Likes` PRIMARY KEY (`user_id`, `post_id`)
 );
+
