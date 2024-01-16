@@ -22,6 +22,12 @@ body {
     
     color: var(--text);
     background-color: var(--bg);
+
+    /*
+    Prevents navbar from overlapping content.
+    Works when text is scaled as well
+    */
+    margin-bottom: 8em;
 }
 
 h1, h2, h3, h4 {
@@ -71,14 +77,6 @@ header a, nav a {
 
 .col-left {
     margin-top: 0;
-}
-
-.col-center-only, .col-right {
-    /*
-    Prevents navbar from overlapping content.
-    Works when text is scaled as well
-    */
-    margin-bottom: 8em;
 }
 
 textarea {
