@@ -219,11 +219,7 @@ class DatabaseHelper{
         $stmt->execute();
         $stmt->store_result();
 
-        if ($stmt->num_rows > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return $stmt->num_rows > 0;
     }
 
     public function logInControl($email, $password) {
