@@ -18,9 +18,11 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post);
                 <span><?php echo $dbh->getLikeCount($post["post_id"]) ?></span>
                 </a>   
             </li>
-            <li class="comment-button">
+            <li>
+                <a class="comment-button">
                 <svg></svg>
                 <span><?php echo $dbh->getCommentCount($post["post_id"]) ?></span>
+                </a>
             </li>
             <li>
                 <p><?php echo $post["user_id"]; ?></p>

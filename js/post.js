@@ -22,3 +22,19 @@ for (likeButton of document.getElementsByClassName("unliked")) {
         toggleLikeAdd(likeButton, postID);
     } 
 }
+
+//Comment yes/no
+
+function toggleCommentShow(commentButton, commentSection) {
+    toggleClass(commentButton, "show_comments", 
+        () => commentSection.style.display = "",
+        () => commentSection.style.display = "none",
+    );
+}
+
+for (commentButton of document.getElementsByClassName("comment-button")) {
+    commentButton.onclick = () => {
+        const commentSection = commentButton.closest('.post').getElementsByClassName("comment-section")[0];
+        toggleCommentShow(commentButton, commentSection);
+    } 
+}

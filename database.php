@@ -51,9 +51,9 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT COUNT(*) AS conta FROM Likes WHERE user_id = ? AND post_id = ?");
         $stmt->bind_param('si', $user, $post);
         $stmt->execute();
-        $stmt->store_result();
+        $result = $stmt->get_result();
 
-        return $stmt->num_rows > 0;
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["conta"];
     }
 
     public function getLikeCount($post) {
@@ -251,9 +251,9 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT COUNT(*) AS conta FROM Followership WHERE following_user_id = ? AND followed_user_id = ?");
         $stmt->bind_param('ss', $user, $followedUser);
         $stmt->execute();
-        $stmt->store_result();
+        $result = $stmt->get_result();
 
-        return $stmt->num_rows > 0;
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["following_number"];
     }
 
     //NUMERO PERSONE CHE UN UTENTE SEGUE
