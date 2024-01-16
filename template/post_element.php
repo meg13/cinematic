@@ -2,8 +2,9 @@
 $post = $_GET["post"];
 $comments = $dbh->getPostComments($post);
 $user_id = get_logged_in_username();
+$is_liked = $dbh -> alreadyLikedPost($user_id, $post);
 ?>
-<article class="post" id="<?php echo $post?>">
+<article class="post" id="<?php echo $post["post_id"]?>">
     <header>
         <h3><?php echo $post["movie_title"]; ?></h3>
         <div class="stars stars-<?php echo $post["stars"] ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
@@ -11,20 +12,22 @@ $user_id = get_logged_in_username();
     <p><?php echo $post["body"]; ?></p>
     <footer>
         <ul>
-            <li class="unliked">
+            <li>
+                <a class="unliked <?php if ($is_liked) echo "liked" ?>">
                 <svg></svg>
                 <span><?php echo $dbh->getLikeCount($post["post_id"]) ?></span>
+                </a>   
             </li>
             <li class="comment-button">
                 <svg></svg>
-                <span><?php echo $dbh->getLikeCount($post["post_id"]) ?></span>
+                <span><?php echo $dbh->getCommentCount($post["post_id"]) ?></span>
             </li>
             <li>
                 <p><?php echo $post["user_id"]; ?></p>
             </li>
         </ul>
     </footer>
-    <div class="comment-section" > <!-- style="display: none;" -->
+    <div class="comment-section" style="display: none;">
         <hr>
         <?php foreach ($comments as $comment) : ?>
             <div>
