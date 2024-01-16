@@ -106,3 +106,4 @@ function moveCursorToEnd(input) {
         1
     );
 }
+
