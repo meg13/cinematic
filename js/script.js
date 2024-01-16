@@ -24,3 +24,10 @@ function textAreaStretchToContent(textArea) {
     textArea.style.height = textArea.scrollHeight + "px";
     textArea.style.overflow = "hidden";
 }
+
+/**
+ * Asynchronously get the logged in username as a Promise 
+ */
+function getLoggedInUsername() {
+    return fetch("api/current_user.php").then(response => response.text());
+}
