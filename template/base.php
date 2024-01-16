@@ -28,6 +28,9 @@
 
     <script src="js/ajax.js"></script>
     <script src="js/script.js"></script>
+    <?php if (isset($template["script"])): ?>
+        <script src="js/<?php echo $template["script"] ?>"></script>
+    <?php endif ?>
 </body>
 
 </html>

@@ -6,6 +6,8 @@ $username = $_GET["user"] ?? get_logged_in_username();
 
 $template["title"] = $username;
 $template["content"] = "profile_content.php";
+$template["script"] = "profile.js";
+
 $template["username"] = $username;
 $template["bio"] = $dbh->getUserBio($username)["bio"] ?? "";
 $template["watched_movies"] = $dbh->getWatchedMovies($username);
