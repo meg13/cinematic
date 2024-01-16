@@ -23,10 +23,12 @@ function ajaxSubmit(form, url) {
 /**
  * Lets this form submit data without refreshing the page.
  * @param {*} form form element
+ * @param {*} action (optional) action to run after submitting the form
  */
-function enableAjaxFormSubmit(form) {
+function enableAjaxFormSubmit(form, action) {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         ajaxSubmit(form);
+        if (action) action();
     });
 }

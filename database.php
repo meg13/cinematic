@@ -179,7 +179,7 @@ class DatabaseHelper{
     }
 
     public function getMoviePost($movie_id){
-        $stmt = $this->db->prepare("SELECT P.body, P.user_id, P.stars, M.title AS movie_title FROM Posts P JOIN Movies M ON P.movie_id = M.movie_id WHERE M.movie_id = ? ORDER BY P.date DESC");
+        $stmt = $this->db->prepare("SELECT P.*, M.title AS movie_title FROM Posts P JOIN Movies M ON P.movie_id = M.movie_id WHERE M.movie_id = ? ORDER BY P.date DESC");
         $stmt->bind_param('s', $movie_id);
         $stmt->execute();
         $result = $stmt->get_result();
