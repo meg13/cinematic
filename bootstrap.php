@@ -21,4 +21,6 @@ function get_logged_in_username() {
     return $_SESSION["username"];
 }
 
+var_dump($dbh->getFriendsPosts(get_logged_in_username()));
+
 ?>

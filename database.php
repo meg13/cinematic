@@ -17,7 +17,7 @@ class DatabaseHelper{
     }
 
     public function getFriendsPosts($user) {
-        $stmt = $this->db->prepare("SELECT P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
+        $stmt = $this->db->prepare("SELECT P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id JOIN Movies M ON P.movie_id = M.movie_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -235,9 +235,9 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT COUNT(*) AS conta FROM Followership WHERE following_user_id = ? AND followed_user_id = ?");
         $stmt->bind_param('ss', $user, $followedUser);
         $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->store_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0]["conta"] > 0;
+        return $stmt->num_rows > 0;
     }
 
     //NUMERO PERSONE CHE UN UTENTE SEGUE
