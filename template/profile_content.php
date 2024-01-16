@@ -5,9 +5,6 @@ if (!isset($username)) {
     die("Username not set");
 }
 
-// Whether this is the user's own page (case insensitive comparison)
-$is_self = strcasecmp($username, get_logged_in_username()) == 0;
-
 ?>
 
 <section class="col-left">
@@ -15,7 +12,7 @@ $is_self = strcasecmp($username, get_logged_in_username()) == 0;
         <h1>
             <?php echo $username ?>
         </h1>
-        <?php if ($is_self): ?>
+        <?php if ($template["is_self"]): ?>
             <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
         <?php else: ?>
             <a class="follow" href="#" onclick="toggleFollow(this)">Segui</a>
@@ -25,8 +22,8 @@ $is_self = strcasecmp($username, get_logged_in_username()) == 0;
         <p>
             <?php echo $template["bio"] ?>
         </p>
-        <p><strong>10</strong> followers</p>
-        <p><strong>10</strong> seguiti</p>
+        <p><strong><?php echo $template["follower_count"] ?></strong> followers</p>
+        <p><strong><?php echo $template["followed_count"] ?></strong> seguiti</p>
     </div>
     <?php if (!empty($template["watched_movies"])): ?>
     <section>
