@@ -29,9 +29,19 @@
 
     <script src="js/ajax.js"></script>
     <script src="js/script.js"></script>
-    <?php if (isset($template["script"])): ?>
-        <script src="js/<?php echo $template["script"] ?>"></script>
-    <?php endif ?>
+
+    <?php 
+    // Additional scripts
+    $script = $template["script"];
+    
+    if (isset($script)): 
+        if (is_array($script)):
+            foreach ($script as $s)
+    ?>
+        <script src="js/<?php echo $s ?>"></script>
+    <?php else: ?>
+        <script src="js/<?php echo $script ?>"></script>
+    <?php endif; endif ?>
 </body>
 
 </html>
