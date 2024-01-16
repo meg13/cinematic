@@ -4,6 +4,7 @@ require_once("bootstrap.php");
 
 $template["title"] = "Ricerca";
 $template["content"] = "search_content.php";
+$template["script"] = "search.js";
 
 $query = $_GET["s"];
 $template["users"] = isset($query) ? array_column($dbh->searchUsers($query), "username") : array();
