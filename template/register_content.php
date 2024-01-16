@@ -2,11 +2,11 @@
     <header>
         <h1>NomeSito</h1>
         <p>Accedi per entrare in un mondo di intrattenimento</p>
+        <?php if(isset($template["errorRegistration"])): ?>
+        <p id="wrongCredential" style="display: inline-block;"><?php echo $template["errorRegistration"]; ?></p>
+        <?php endif; ?>
     </header>
     <form action="register.php" method="POST">
-    <?php if(isset($template["errorRegistration"])): ?>
-    <p><?php echo $template["errorRegistration"]; ?></p>
-    <?php endif; ?>
         <ul>
             <li><label for="username">Nome utente</label>
                 <input type="text" id="username" name="username"/>
