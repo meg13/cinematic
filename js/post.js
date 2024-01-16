@@ -40,9 +40,24 @@ Array.from(document.getElementsByClassName("comment-button")).forEach(commentBut
 
 // Post comment
 
+/**
+ * Disables the submit button if the form is incomplete.
+ */
+function validateNewCommentForm(textArea, submitButton) {
+    if (textArea.value.length == 0) {
+        submitButton.setAttribute("disabled", "true")
+    } else {
+        submitButton.removeAttribute("disabled");
+    }
+}
+
 Array.from(document.getElementsByClassName("comment-section")).forEach(commentSection => {
     const commentForm = commentSection.getElementsByTagName("form")[0];
     const textArea = commentForm.getElementsByTagName("textarea")[0];
+    const submitButton = commentForm.querySelector("input[type=submit]");
+
+    validateNewCommentForm(textArea, submitButton);
+    textArea.oninput = () => validateNewCommentForm(textArea, submitButton);
 
     // Run on form submit
     enableAjaxFormSubmit(commentForm, () => {
@@ -51,6 +66,7 @@ Array.from(document.getElementsByClassName("comment-section")).forEach(commentSe
         const text = document.createElement("p");
         text.innerText = textArea.value;
         textArea.value = "";
+        validateNewCommentForm(textArea, submitButton);
 
         getLoggedInUsername().then(username => {
             author.innerText = username;
