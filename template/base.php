@@ -11,6 +11,7 @@
     <?php endif ?>
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/animations.css">
     <title><?php $template["title"] ?></title>
 </head>
 

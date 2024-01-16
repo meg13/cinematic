@@ -485,9 +485,13 @@ form > input[type=submit][value=Cerca] {
     margin-right: 0;
 }
 
-.post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg{
+.post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg {
     margin-right: 2px;
     margin-bottom: 3px;
+}
+
+.write-a-post svg {
+    cursor: pointer;
 }
 
 .comment-section > div > p {

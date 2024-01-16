@@ -24,15 +24,3 @@ function textAreaStretchToContent(textArea) {
     textArea.style.height = textArea.scrollHeight + "px";
     textArea.style.overflow = "hidden";
 }
-
-/**
- * Moves the cursor to the end of the input
- * @param {*} input target input
- */
-function moveCursorToEnd(input) {
-    setTimeout(
-        () => input.setSelectionRange(input.value.length, input.value.length),
-        1
-    );
-}
-
