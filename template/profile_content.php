@@ -16,7 +16,7 @@ if (!isset($username)) {
             <a class="edit" href="#">Modifica</a>
         <?php else: ?>
             <a class="follow <?php if ($template["is_following"]) echo "following" ?>" href="#">
-                Segui
+                <?php echo $template["is_following"] ? "Seguito" : "Segui" ?>
             </a>
         <?php endif ?>
     </header>
