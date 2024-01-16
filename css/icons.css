@@ -28,6 +28,7 @@ svg {
 .comment-button svg {
     mask-image: url('../svg/comment.svg');
     -webkit-mask-image: url('../svg/comment.svg');
+    background-color: var(--text);
 }
 
 .unliked svg {
@@ -35,6 +36,8 @@ svg {
     height: 15px;
     mask-image: url('../svg/emptyheart.svg');
     -webkit-mask-image: url('../svg/emptyheart.svg');
+    background-color: var(--text);
+
 }
 
 .liked svg {
