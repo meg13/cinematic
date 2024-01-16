@@ -1,4 +1,5 @@
 <?php 
 require("api.php");
-$dbh->writeComment($post, $user_id, $_POST["write-comment"]);
+$post_id = $_GET["post_id"];
+$dbh->writeComment($post_id, get_logged_in_username(), $_POST["write-comment"]);
 ?>

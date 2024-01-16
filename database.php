@@ -17,7 +17,7 @@ class DatabaseHelper{
     }
 
     public function getFriendsPosts($user) {
-        $stmt = $this->db->prepare("SELECT P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
+        $stmt = $this->db->prepare("SELECT P.post_id, P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id JOIN Movies M ON P.movie_id = M.movie_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -26,7 +26,7 @@ class DatabaseHelper{
     }
 
     public function getUserPosts($user) {
-        $stmt = $this->db->prepare("SELECT P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Movies M ON P.movie_id = M.movie_id WHERE P.user_id = ? ORDER BY P.date DESC");
+        $stmt = $this->db->prepare("SELECT P.post_id, P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Movies M ON P.movie_id = M.movie_id WHERE P.user_id = ? ORDER BY P.date DESC");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -38,6 +38,22 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("INSERT INTO Likes (user_id, post_id) VALUES (?, ?)");
         $stmt->bind_param('si', $user, $post);
         $stmt->execute();
+    }
+
+    public function unlikePost($user, $post) {
+        $stmt = $this->db->prepare("DELETE FROM Likes WHERE user_id = ? AND post_id = ?");
+        $stmt->bind_param('si', $user, $post);
+        $stmt->execute();
+
+    }
+
+    public function alreadyLikedPost( $user, $post) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS conta FROM Likes WHERE user_id = ? AND post_id = ?");
+        $stmt->bind_param('si', $user, $post);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["conta"];
     }
 
     public function getLikeCount($post) {
@@ -59,7 +75,7 @@ class DatabaseHelper{
     }
 
     public function getPostComments($post) {
-        $stmt = $this->db->prepare("SELECT C.user_id, C.body, C. FROM Comments C WHERE C.post_id = ?");
+        $stmt = $this->db->prepare("SELECT C.user_id, C.body FROM Comments C WHERE C.post_id = ?");
         $stmt->bind_param('i', $post);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -237,7 +253,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0]["conta"] > 0;
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["following_number"];
     }
 
     //NUMERO PERSONE CHE UN UTENTE SEGUE

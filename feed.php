@@ -2,9 +2,10 @@
 
 require_once("bootstrap.php");
 
-$templateParams["titolo"] = "Feed";
-$templateParams["content"] = "feed_content.php";
-$templateParams["post"] = $dbh->getFriendsPosts($a);
+$template["title"] = "Feed";
+$template["content"] = "feed_content.php";
+$template["post"] = $dbh->getFriendsPosts(get_logged_in_username());
+$template["script"] = "post.js";
 require("template/base.php");
 
 ?>
