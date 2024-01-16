@@ -1,5 +1,6 @@
 <?php
 
+$users = $template["users"];
 $movies = $template["movies"];
 
 ?>
@@ -10,7 +11,7 @@ $movies = $template["movies"];
     </header>
     <form action="#">
         <label for="s" hidden>Cerca</label>
-        <input type="text" id="s" name="s" placeholder="Cerca un film..." rows="1" autofocus <?php if (isset($query)) echo 'value="' . $query . '"' ?> onfocus="moveCursorToEnd(this)"></input>
+        <input type="text" id="s" name="s" placeholder="Cerca film e utenti..." rows="1" autofocus <?php if (isset($query)) echo 'value="' . $query . '"' ?> onfocus="moveCursorToEnd(this)"></input>
         <input type="submit" value="Cerca">
     </form>
     <ul class="movie-list movie-grid">
@@ -22,5 +23,14 @@ $movies = $template["movies"];
             }
         }
         ?>
+    </ul>
+    <ul class="users-list">
+        <?php foreach ($users as $username): ?>
+            <li>
+                <a href="profile.php?user=<?php echo $username ?>">
+                    <svg></svg><?php echo $username?>
+                </a>
+            </li>
+        <?php endforeach ?>
     </ul>
 </section>

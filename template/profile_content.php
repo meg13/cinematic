@@ -15,15 +15,17 @@ if (!isset($username)) {
         <?php if ($template["is_self"]): ?>
             <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
         <?php else: ?>
-            <a class="follow" href="#" onclick="toggleFollow(this)">Segui</a>
+            <a class="follow <?php if ($template["is_following"]) echo "following" ?>" href="#" onclick="toggleFollow(this, '<?php echo $username ?>')">
+                Segui
+            </a>
         <?php endif ?>
     </header>
     <div class="bio">
         <p>
             <?php echo $template["bio"] ?>
         </p>
-        <p><strong><?php echo $template["follower_count"] ?></strong> followers</p>
-        <p><strong><?php echo $template["followed_count"] ?></strong> seguiti</p>
+        <p><strong id="follower-count"><?php echo $template["follower_count"] ?></strong> followers</p>
+        <p><strong id="followed-count"><?php echo $template["followed_count"] ?></strong> seguiti</p>
     </div>
     <?php if (!empty($template["watched_movies"])): ?>
     <section>

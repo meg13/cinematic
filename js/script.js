@@ -15,10 +15,18 @@ function toggleClass(element, className, whenOn, whenOff) {
     }
 }
 
-function toggleFollow(followButton) {
+function toggleFollow(followButton, username) {
     toggleClass(followButton, "following",
-        () => followButton.innerHTML = "Seguito",
-        () => followButton.innerHTML = "Segui"
+        () => {
+            followButton.innerHTML = "Seguito";
+            document.getElementById("follower-count").innerText++;
+            ajaxGet("api/follow.php?user=" + username);
+        },
+        () => {
+            followButton.innerHTML = "Segui";
+            document.getElementById("follower-count").innerText--;
+            ajaxGet("api/unfollow.php?user=" + username);
+        }
     );
 }
 

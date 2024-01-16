@@ -30,7 +30,7 @@ $id = $movie->imdbID;
     <div class="movie-description">
         <p lang="en"><?php echo $movie->Plot ?></p>
         <p class="weak">Regista: <?php echo $movie->Director ?></p>
-        <p>Visto da <strong><?php echo $template["followed_watched_count"] ?></strong> persone che segui</p> <!-- TODO -->
+        <p>Visto da <strong><?php echo $template["followed_watched_count"] ?></strong> persone che segui</p>
     </div>
     <div class="unwatched <?php if ($template["in_watched"]) echo "watched" ?>"><a href="#" onclick="toggleWatchedAdd(this.parentElement, '<?php echo $id ?>')"><svg></svg>Visto</a></div>
 </section>
