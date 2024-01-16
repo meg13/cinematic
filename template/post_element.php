@@ -1,13 +1,7 @@
 <?php
 $post = $_GET["post"];
 $comments = $dbh->getPostComments($post);
-$user_id = $_SESSION["user_id"];
-
-if(isset($_POST["write-comment"])){
-    $dbh->writeComment($post, );
-    $dbh->writeComment($post, $user_id, $_POST["write-comment"]);
-}
-
+$user_id = get_logged_in_username();
 ?>
 
 <header>
@@ -38,7 +32,7 @@ if(isset($_POST["write-comment"])){
             <p><?php echo $comment["body"]; ?></p>
         </div>
     <?php endforeach; ?>
-    <form action="#" method="POST">
+    <form action="api/create_comment.php" method="POST">
         <label for="write-comment" hidden>Scrivi un post</label>
         <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
         <input type="submit" value="Invia">
