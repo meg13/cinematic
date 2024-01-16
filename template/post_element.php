@@ -4,7 +4,7 @@ $post_id = $post["post_id"];
 
 $comments = $dbh->getPostComments($post_id);
 $user_id = get_logged_in_username();
-$is_liked = $dbh -> alreadyLikedPost($user_id, $post);
+$is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
 ?>
 <article class="post" id="<?php echo $post_id ?>">
     <header>
