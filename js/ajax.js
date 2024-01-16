@@ -11,9 +11,10 @@ function ajaxGet(url) {
 /**
  * Submits a form without refreshing the page.
  * @param {*} form form element
+ * @param {*} url (optional) target url that overrides the form action
  */
-function ajaxSubmit(form) {
-    fetch(form.action, {
+function ajaxSubmit(form, url) {
+    fetch(url ? url : form.action, {
         method: form.method,
         body: new URLSearchParams(new FormData(form))
     });

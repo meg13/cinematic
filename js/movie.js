@@ -28,7 +28,7 @@ for (watchedButton of document.getElementsByClassName("unwatched")) {
 
 // Write post
 
-let newPostRating = 0; 
+let newPostRating = 0;
 
 let writePost = document.getElementsByClassName("write-a-post")[0];
 
@@ -42,7 +42,7 @@ function setFilledStarsAmount(star, amount) {
  */
 function handleStars() {
     const stars = writePost.getElementsByTagName("svg");
-    
+
     for (let i = 0; i < stars.length; i++) {
         let star = stars[i];
         star.onclick = () => {
@@ -55,3 +55,10 @@ function handleStars() {
 }
 
 handleStars();
+
+const writePostForm = writePost.getElementsByTagName("form")[0];
+writePostForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    ajaxSubmit(writePostForm, writePostForm.action + "&rating=" + newPostRating);
+    location.reload();
+});
