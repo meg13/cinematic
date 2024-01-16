@@ -20,7 +20,7 @@ $is_self = strcasecmp($username, get_logged_in_username()) == 0;
 $template["is_self"] = $is_self;
 
 if (!$is_self) {
-    $template["is_following"] = false; // TODO
+    $template["is_following"] = $dbh->checkFollowUser(get_logged_in_username(), $username);
 }
 
 require("template/base.php");
