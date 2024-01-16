@@ -270,7 +270,7 @@ class DatabaseHelper{
     }
 
     public function searchUsers($user) {
-        $stmt = $this->db->prepare("SELECT username FROM Users WHERE username = CONCAT(?, '%')");
+        $stmt = $this->db->prepare("SELECT username FROM Users WHERE username LIKE CONCAT(?, '%')");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
