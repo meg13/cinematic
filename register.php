@@ -2,6 +2,9 @@
 
 require_once("bootstrap.php");
 
+$template["title"] = "Register";
+$template["content"] = "register_content.php";
+
 if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
     // Could not get the data that should have been sent.
     $template["errorRegistration"] = "Please complete the registration form!";
@@ -18,5 +21,6 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
     $dbh->registerUser($_POST['username'], $_POST['email'], $_POST['password']);
 }
 
+require("template/base.php");
 ?>
 
