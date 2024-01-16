@@ -36,6 +36,7 @@
         flex: 4; /* 40% width */
         margin-top: 0;
         margin-right: 48px;
+        margin-bottom: 0;
     }
 
     .col-right section:first-child {
@@ -44,6 +45,7 @@
 
     .col-center-only {
         width: 100%;
+        margin-bottom: 0;
     }
 
     .col-center-only > * {

@@ -73,6 +73,14 @@ header a, nav a {
     margin-top: 0;
 }
 
+.col-center-only, .col-right {
+    /*
+    Prevents navbar from overlapping content.
+    Works when text is scaled as well
+    */
+    margin-bottom: 8em;
+}
+
 textarea {
     resize: none;
     line-height: 1.6;
@@ -95,6 +103,7 @@ nav {
     left: 0;
     border-top: 2px solid var(--overlay2);
     font-size: 0.9em;
+    z-index: 100;
 }
 
 nav ul {
@@ -251,6 +260,7 @@ header .edit {
 
 .users-list:not(:empty) {
     margin-top: calc(var(--base-spacing) * 2);
+    margin-bottom: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
