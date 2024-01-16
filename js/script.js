@@ -28,6 +28,7 @@ function textAreaStretchToContent(textArea) {
 /**
  * Asynchronously get the logged in username as a Promise 
  */
-function getLoggedInUsername() {
-    return fetch("api/current_user.php").then(response => response.text());
+async function getLoggedInUsername() {
+    const response = await fetch("api/current_user.php");
+    return await response.text();
 }
