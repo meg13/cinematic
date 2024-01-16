@@ -229,15 +229,15 @@ header .edit {
     font-size: 0.85em;
 }
 
-.movie-list a {
+.movie-list a, .users-list a {
     color: var(--text);
 }
 
-.movie-list a:not(:hover) {
+.movie-list a:not(:hover), .users-list a:not(:hover) {
     text-decoration: none;
 }
 
-.movie-grid {
+.movie-grid, .users-list {
     width: auto;
     margin: auto;
     overflow-x: hidden;
@@ -247,6 +247,18 @@ header .edit {
 
 .movie-grid > li:first-child {
     margin-left: auto;
+}
+
+.users-list:not(:empty) {
+    margin-top: calc(var(--base-spacing) * 2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.users-list a {
+    margin: var(--base-spacing);
+    font-weight: bold;
 }
 
 /* form preceeded by header */

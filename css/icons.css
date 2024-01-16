@@ -4,10 +4,10 @@ svg {
     margin-right: 10px;
     margin-bottom: 2px;
     vertical-align: middle;
+    background-color: var(--text);
 }
 
 .unwatched svg, .watchlist-add svg {
-    background-color: var(--text);
     mask-image: url('../svg/add.svg');
     -webkit-mask-image: url('../svg/add.svg');
 }
@@ -26,7 +26,6 @@ svg {
 }
 
 .comment-button svg {
-    background-color: var(--text);
     mask-image: url('../svg/comment.svg');
     -webkit-mask-image: url('../svg/comment.svg');
 }
@@ -34,7 +33,6 @@ svg {
 .unliked svg {
     width: 16px;
     height: 15px;
-    background-color: var(--text);
     mask-image: url('../svg/emptyheart.svg');
     -webkit-mask-image: url('../svg/emptyheart.svg');
 }
@@ -64,7 +62,7 @@ nav .search-icon {
     -webkit-mask-image: url('../svg/search.svg');
 }
 
-nav .profile-icon {
+nav .profile-icon, .users-list svg {
     mask-image: url('../svg/profile.svg');
     -webkit-mask-image: url('../svg/profile.svg');
 }
@@ -72,6 +70,11 @@ nav .profile-icon {
 nav .bell-icon {
     mask-image: url('../svg/bell.svg');
     -webkit-mask-image: url('../svg/bell.svg');
+}
+
+.users-list svg {
+    scale: 0.8;
+    margin-bottom: 4px;
 }
 
 .stars svg {
