@@ -1,5 +1,13 @@
 <?php
 $post = $_GET["post"];
+$comments = $dbh->getPostComments($post);
+$user_id = $_SESSION["user_id"];
+
+if(isset($_POST["write-comment"])){
+    $dbh->writeComment($post, );
+    $dbh->writeComment($post, $user_id, $_POST["write-comment"]);
+}
+
 ?>
 
 <header>
@@ -24,13 +32,19 @@ $post = $_GET["post"];
 </footer>
 <div class="comment-section" > <!-- style="display: none;" -->
     <hr>
-    <div>
-        <p>user1</p>
-        <p>Lorem ipsum dolor sit amet consectetur. Velit in morbi aliquet scelerisque nec fringilla diam tellus sit. Gravida sed convallis orci bibendum. </p>
-    </div>
-    <form>
+    <?php foreach ($comments as $comment) : ?>
+        <div>
+            <p><?php echo $comment["user_id"]; ?></p>
+            <p><?php echo $comment["body"]; ?></p>
+        </div>
+    <?php endforeach; ?>
+    <form action="#" method="POST">
         <label for="write-comment" hidden>Scrivi un post</label>
         <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
         <input type="submit" value="Invia">
     </form>
 </div>
+
+
+
+
