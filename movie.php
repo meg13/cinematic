@@ -18,6 +18,8 @@ $dbh->addMovie($movie->imdbID, $movie->Title);
 
 $template["title"] = "Film";
 $template["content"] = "movie_content.php";
+$template["script"] = "movie.js";
+
 $template["movie"] = $movie;
 $template["in_watchlist"] = $dbh->isInWatchlist(get_logged_in_username(), $movie_id);
 $template["in_watched"] = $dbh->isWatched(get_logged_in_username(), $movie_id);

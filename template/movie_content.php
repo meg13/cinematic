@@ -10,7 +10,7 @@ $id = $movie->imdbID;
 ?>
 
 <section class="col-left">
-    <header class="movie-header">
+    <header class="movie-header" id="<?php echo $id ?>">
         <ul class="movie-list">
             <li>
                 <div style="background-image: url('<?php echo $movie->Poster ?>'); background-size: cover;"></div>
@@ -23,8 +23,9 @@ $id = $movie->imdbID;
                 <span lang="en"><?php echo $movie->Genre ?></span>
             </p>
             <div class="stars stars-<?php echo rating_to_stars($movie->Metascore) ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>
-            <a class="watchlist-add <?php if ($template["in_watchlist"]) echo "in-watchlist" ?>" href="#"
-                onclick="toggleWatchlistAdd(this, '<?php echo $id ?>')"><svg></svg>Aggiungi a watchlist</a>
+            <a class="watchlist-add <?php if ($template["in_watchlist"]) echo "in-watchlist" ?>" href="#">
+                <svg></svg>Aggiungi a watchlist
+            </a>
         </div>
     </header>
     <div class="movie-description">
@@ -32,7 +33,11 @@ $id = $movie->imdbID;
         <p class="weak">Regista: <?php echo $movie->Director ?></p>
         <p>Visto da <strong><?php echo $template["followed_watched_count"] ?></strong> persone che segui</p>
     </div>
-    <div class="unwatched <?php if ($template["in_watched"]) echo "watched" ?>"><a href="#" onclick="toggleWatchedAdd(this.parentElement, '<?php echo $id ?>')"><svg></svg>Visto</a></div>
+    <div class="unwatched <?php if ($template["in_watched"]) echo "watched" ?>">
+        <a href="#">
+            <svg></svg>Visto
+        </a>
+    </div>
 </section>
 <section class="col-right">
     <h2>Post</h2>
