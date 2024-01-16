@@ -22,6 +22,6 @@ function toggleWatchedAdd(watchedButton) {
     );
 }
 
-for (watchedButton of document.getElementsByClassName("watched")) {
+for (watchedButton of document.getElementsByClassName("unwatched")) {
     watchedButton.getElementsByTagName("a")[0].onclick = () => toggleWatchedAdd(watchedButton);
 }
