@@ -15,7 +15,9 @@ if (!isset($username)) {
         <?php if ($template["is_self"]): ?>
             <a class="edit" href="#" onclick="toggleBioEdit(this)">Modifica</a>
         <?php else: ?>
-            <a class="follow" href="#" onclick="toggleFollow(this)">Segui</a>
+            <a class="follow <?php if ($template["is_following"]) echo "following" ?>" href="#" onclick="toggleFollow(this, '<?php echo $username ?>')">
+                Segui
+            </a>
         <?php endif ?>
     </header>
     <div class="bio">
