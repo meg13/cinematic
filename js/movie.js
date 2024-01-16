@@ -30,7 +30,21 @@ for (watchedButton of document.getElementsByClassName("unwatched")) {
 
 let newPostRating = 0;
 
-let writePost = document.getElementsByClassName("write-a-post")[0];
+const writePost = document.getElementsByClassName("write-a-post")[0];
+const writePostForm = writePost.getElementsByTagName("form")[0];
+const writePostTextArea = writePost.getElementsByTagName("textarea")[0];
+const submitPostButton = writePostForm.querySelector("input[type=submit]");
+
+/**
+ * Disables the submit button if the form is incomplete.
+ */
+function validateNewPostForm() {
+    if (newPostRating <= 0 || writePostTextArea.value.length == 0) {
+        submitPostButton.setAttribute("disabled", "true")
+    } else {
+        submitPostButton.removeAttribute("disabled");
+    }
+}
 
 function setFilledStarsAmount(star, amount) {
     star.parentElement.className = "stars stars-" + amount;
@@ -48,15 +62,19 @@ function handleStars() {
         star.onclick = () => {
             newPostRating = i + 1;
             setFilledStarsAmount(star, newPostRating);
+            validateNewPostForm();
         };
         star.onmouseenter = () => setFilledStarsAmount(star, i + 1);
         star.onmouseleave = () => setFilledStarsAmount(star, newPostRating);
     }
 }
 
+writePostTextArea.oninput = validateNewPostForm;
+
+validateNewPostForm();
+
 handleStars();
 
-const writePostForm = writePost.getElementsByTagName("form")[0];
 writePostForm.addEventListener("submit", (event) => {
     event.preventDefault();
     ajaxSubmit(writePostForm, writePostForm.action + "&rating=" + newPostRating);
