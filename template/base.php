@@ -36,10 +36,10 @@
     
     if (isset($script)): 
         if (is_array($script)):
-            foreach ($script as $s)
+            foreach ($script as $s):
     ?>
         <script src="js/<?php echo $s ?>"></script>
-    <?php else: ?>
+    <?php endforeach; else: ?>
         <script src="js/<?php echo $script ?>"></script>
     <?php endif; endif ?>
 </body>
