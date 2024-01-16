@@ -12,7 +12,8 @@ class DatabaseHelper{
 
     public function registerUser($username, $email, $password) {
         $stmt = $this->db->prepare("INSERT INTO Users (username, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param('sss', $username, $email, $password);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bind_param('sss', $username, $email, $hashedPassword);
         $stmt->execute();
     }
 
