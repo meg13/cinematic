@@ -1,0 +1,15 @@
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.movie-list {
+    animation: slide-up 0.5s ease-out;
+}
