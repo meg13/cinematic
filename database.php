@@ -91,7 +91,7 @@ class DatabaseHelper{
 
     public function writePost($user, $body, $movie_id, $stars) {
         $stmt = $this->db->prepare("INSERT INTO Posts (body, user_id, movie_id, stars, date) VALUES (?, ?, ?, ?, NOW())");
-        $stmt->bind_param('bssi', $body, $user, $movie_id, $stars);
+        $stmt->bind_param('sssi', $body, $user, $movie_id, $stars);
         $stmt->execute();
     }
 
