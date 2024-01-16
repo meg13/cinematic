@@ -19,10 +19,12 @@ function toggleFollow(followButton, username) {
     toggleClass(followButton, "following",
         () => {
             followButton.innerHTML = "Seguito";
+            document.getElementById("follower-count").innerText++;
             ajaxGet("api/follow.php?user=" + username);
         },
         () => {
             followButton.innerHTML = "Segui";
+            document.getElementById("follower-count").innerText--;
             ajaxGet("api/unfollow.php?user=" + username);
         }
     );
