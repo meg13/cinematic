@@ -18,9 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // One or more values are empty.
         $template["errorRegistration"] = "Please complete the registration form! One or more values are empty";
         
-    } else if($dbh->alreadyRegistered($_POST['username'])) {
+    } else if($dbh->usernameAlreadyRegistered($_POST['username'])) {
         // Username already exists
         $template["errorRegistration"] = "Username already exists, please choose another!";
+
+    } else if($dbh->emailAlreadyRegistered($_POST['email'])) {
+        // Email already exists
+        $template["errorRegistration"] = "Email already exists, please choose another!";
 
     } else if (isset($_POST['username'], $_POST['password'], $_POST['email'])){
         $dbh->registerUser($_POST['username'], $_POST['email'], $_POST['password']);
