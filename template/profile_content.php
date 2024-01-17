@@ -55,4 +55,10 @@ if (!isset($username)) {
 </section>
 <section class="col-right">
     <h2>Post</h2>
+    <?php
+        foreach ($template["posts"] as $post) {
+            $_GET["post"] = $post;
+            require("post_element.php");
+        }
+    ?>
 </section>
