@@ -1,5 +1,7 @@
 <?php
 
+require_once("api/notification_text.php");
+
 $notifications = $template["notifications"];
 if (!isset($notifications)) {
     die("Notifications not set");
@@ -13,7 +15,11 @@ if (!isset($notifications)) {
     </header>
     <ul class="notification-list">
         <?php foreach ($notifications as $notification): ?>
-        <li><a href="<?php $notification["action"] ?>"><?php echo $notification["text"] ?></a></li>
+            <li>
+                <a href="<?php echo get_notification_action($notification) ?>">
+                    <?php echo get_notification_text($notification) ?>
+                </a>
+            </li>
         <?php endforeach ?>
     </ul>
 </section>

@@ -2,12 +2,7 @@
 
 require_once("bootstrap.php");
 
-$notifications = array(
-    array("action" => "#", "text" => "username ha iniziato a seguirti"),
-    array("action" => "#", "text" => "username ha iniziato a seguirti"),
-    array("action" => "#", "text" => "A username piace il tuo post"),
-    array("action" => "#", "text" => "A username piace il tuo post")
-); // TODO get from db
+$notifications = $dbh->getNotifications(get_logged_in_username());
 
 $template["title"] = "Notifiche";
 $template["content"] = "notifications_content.php";
