@@ -12,7 +12,8 @@ class DatabaseHelper{
 
     public function registerUser($username, $email, $password) {
         $stmt = $this->db->prepare("INSERT INTO Users (username, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param('sss', $username, $email, $password);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bind_param('sss', $username, $email, $hashedPassword);
         $stmt->execute();
     }
 
@@ -219,11 +220,7 @@ class DatabaseHelper{
         $stmt->execute();
         $stmt->store_result();
 
-        if ($stmt->num_rows > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return $stmt->num_rows > 0;
     }
 
     public function logInControl($email, $password) {

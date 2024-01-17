@@ -9,6 +9,9 @@
     <?php if ($template["post"]): ?>
     <link rel="stylesheet" href="css/feedStyle.css">    
     <?php endif ?>
+    <?php if ($template["register"]): ?>
+    <link rel="stylesheet" href="css/loginStyle.css">    
+    <?php endif ?>
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/animations.css">
