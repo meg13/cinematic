@@ -542,3 +542,7 @@ form > input:disabled {
 .unliked, .comment-button {
     color: var(--text);
 }
+
+.post {
+    word-break: break-all;
+}
