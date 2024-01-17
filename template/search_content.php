@@ -9,7 +9,7 @@ $movies = $template["movies"];
     <header>
         <h1>Ricerca</h1>
     </header>
-    <form action="#" method="get">
+    <form class="search-form" action="#" method="get">
         <label for="s" hidden>Cerca</label>
         <input type="text" id="search-field" name="s" placeholder="Cerca film e utenti..." rows="1" autofocus <?php if (isset($query)) echo 'value="' . $query . '"' ?>></input>
         <input type="submit" value="Cerca">
