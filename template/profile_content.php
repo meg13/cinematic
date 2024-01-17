@@ -27,6 +27,9 @@ if (!isset($username)) {
         <p><strong id="follower-count"><?php echo $template["follower_count"] ?></strong> followers</p>
         <p><strong id="followed-count"><?php echo $template["followed_count"] ?></strong> seguiti</p>
     </div>
+    <?php if ($is_self): ?>
+    <a class="logout" href="#">Esci dal tuo account</a>
+    <?php endif ?>
     <?php if (!empty($template["watched_movies"])): ?>
     <section>
         <h2>Visti</h2>

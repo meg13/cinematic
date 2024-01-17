@@ -17,9 +17,9 @@ function toggleFollow(followButton) {
     );
 }
 
-for (followButton of document.getElementsByClassName("follow")) {
+Array.from(document.getElementsByClassName("follow")).forEach(followButton => {
     followButton.onclick = () => toggleFollow(followButton);
-}
+});
 
 // Edit bio
 
@@ -73,6 +73,15 @@ function toggleBioEdit(editButton) {
     );
 }
 
-for (editButton of document.getElementsByClassName("edit")) {
+Array.from(document.getElementsByClassName("edit")).forEach(editButton => {
     editButton.onclick = () => toggleBioEdit(editButton);
-}
+});
+
+// Log-out
+
+Array.from(document.getElementsByClassName("logout")).forEach(logoutButton => {
+    logoutButton.onclick = () => {
+        ajaxGet("api/logout.php");
+        location.reload();
+    }
+});
