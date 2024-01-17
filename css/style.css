@@ -448,6 +448,10 @@ hr {
     background: var(--text);
 }
 
+.comment-section:not(.show-comments) {
+    display: none;
+}
+
 .comment-section > div {
     margin-bottom: 8px;
     padding: 2px 0px;

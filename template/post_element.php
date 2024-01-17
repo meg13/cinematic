@@ -34,7 +34,7 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
             </li>
         </ul>
     </footer>
-    <div class="comment-section" style="display: none;">
+    <div class="comment-section">
         <hr>
         <?php foreach ($comments as $comment) : ?>
             <div>
