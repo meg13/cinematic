@@ -7,7 +7,7 @@
     <form action="login.php" method="POST">
         <ul>
             <li><label for="email">E-mail</label>
-                <input type="text" id="email" name="email" placeholder="email@example.com" <?php if(isset($template["loginError"])) echo 'class="wrong"'?>/>
+                <input type="email" id="email" name="email" placeholder="email@example.com" <?php if(isset($template["loginError"])) echo 'class="wrong"'?>/>
             </li>
             <li><label for="password">Password</label>
                 <input type="password" id="password" name="password" <?php if(isset($template["loginError"])) echo 'class="wrong"'?> />
