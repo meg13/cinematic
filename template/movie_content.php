@@ -22,7 +22,10 @@ $id = $movie->imdbID;
                 <span><?php echo date_to_year($movie->Released) . " • " . $movie->Runtime ?></span>
                 <span lang="en"><?php echo $movie->Genre ?></span>
             </p>
-            <div class="stars stars-<?php echo rating_to_stars($movie->Metascore) ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>
+            <?php
+            $_GET["stars_filled_amount"] = rating_to_stars($movie->Metascore);
+            require("stars.php")
+            ?>
             <a class="watchlist-add <?php if ($template["in_watchlist"]) echo "in-watchlist" ?>" href="#">
                 <svg></svg>Aggiungi a watchlist
             </a>
