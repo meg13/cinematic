@@ -37,7 +37,7 @@ body {
     Prevents navbar from overlapping content.
     Works when text is scaled as well
     */
-    margin-bottom: 8em;
+    margin-bottom: 9em;
 }
 
 h1, h2, h3, h4 {
@@ -310,6 +310,11 @@ header + form {
     opacity: .6;
 }
 
+.notification-list p {
+    display: block;
+    text-align: center;
+}
+
 /* Movie */
 
 .movie-header {
@@ -443,6 +448,10 @@ hr {
     background: var(--text);
 }
 
+.comment-section:not(.show-comments) {
+    display: none;
+}
+
 .comment-section > div {
     margin-bottom: 8px;
     padding: 2px 0px;
@@ -532,4 +541,13 @@ form > input:disabled {
 
 .unliked, .comment-button {
     color: var(--text);
+}
+
+.post {
+    word-break: break-all;
+}
+
+/*modified*/
+.write-a-post > header + form {
+    margin: 14px 0 0;
 }

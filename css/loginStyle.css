@@ -82,12 +82,12 @@ section > ul > li {
 }
 
 form > ul > li:last-child > input, section > ul > li {
-    color: var(--text);
+    color: var(--text); /*modify with #2A2734*/
     background-color: var(--primary);
 }
 
 a {
-    color: var(--text);
+    color: var(--text); /*modify with #2A2734*/
     text-decoration: none;
     display: block;
     font-weight: bold;
