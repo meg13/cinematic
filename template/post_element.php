@@ -50,6 +50,3 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
     </div>
 </article>
 
-
-
-
