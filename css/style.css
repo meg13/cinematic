@@ -545,6 +545,19 @@ form > input:disabled {
     word-break: break-all;
 }
 
+/*modified*/
+.write-a-post > header + form {
+    margin: 14px 0 0;
+}
+
+.light-theme form > input[type=submit], .light-theme .follow {
+    color: var(--overlay1);
+}
+
+.post {
+    word-break: break-all;
+}
+
 .light-theme form > input[type=submit], .light-theme .follow {
     color: var(--overlay1);
 }
