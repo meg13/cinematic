@@ -188,7 +188,7 @@ class DatabaseHelper{
     }
 
     public function getNotifications($user) {
-        $stmt = $this->db->prepare("SELECT N.responsable_user_id, N.type, N.post_id, N.read  FROM Notifications N WHERE N.receiving_user_id = ? ORDER BY N.date DESC");
+        $stmt = $this->db->prepare("SELECT N.* FROM Notifications N WHERE N.receiving_user_id = ? ORDER BY N.date DESC");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
