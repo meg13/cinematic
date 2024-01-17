@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const errorRegistration = "<?php echo $template['loginError']; ?>";
+    const loginError = "<?php echo addslashes($template['loginError']); ?>";
     const wrongCredential = document.getElementById('wrongCredential');
-    const errorHeader = document.querySelector("header.error");
-    const password = document.getElementById("password")
+    const errorHeader = document.querySelector(".error-section");
+    const password = document.getElementById("password");
 
-    if (errorRegistration) {
-        wrongCredential.style.display = 'inline-block';
+    if (loginError !== "") {
+        wrongCredential.style.display = 'block';
         errorHeader.classList.add("error");
         password.classList.add("wrong");
     } else {
