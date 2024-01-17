@@ -28,6 +28,17 @@
     }
 
     nav .theme-switch {
+        position: fixed;
+        right: calc(var(--base-spacing) * 2);
+        font-size: 0;
+    }
+
+    nav .theme-switch svg {
+        display: initial;
+        transform: translateY(-2px);
+    }
+
+    nav .theme-switch {
         font-weight: normal;
     }
 
