@@ -37,7 +37,7 @@ body {
     Prevents navbar from overlapping content.
     Works when text is scaled as well
     */
-    margin-bottom: 8em;
+    margin-bottom: 9em;
 }
 
 h1, h2, h3, h4 {
