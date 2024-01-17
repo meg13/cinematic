@@ -2,7 +2,7 @@
 
 require_once("bootstrap.php");
 
-$notifications = $dbh->getNotifications(get_logged_in_username());
+$notifications = $dbh->getNotifications("user2");
 
 $template["title"] = "Notifiche";
 $template["content"] = "notifications_content.php";
