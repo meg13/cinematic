@@ -2,9 +2,7 @@
     <header>
         <h1>NomeSito</h1>
         <p>Accedi per entrare in un mondo di intrattenimento</p>
-        <?php if(isset($template["errorRegistration"])): ?>
-        <p id="wrongCredential" style="display: inline-block;"><?php echo $template["errorRegistration"]; ?></p>
-        <?php endif; ?>
+        <p id="wrongCredential" style="display: none"><?php echo $template["errorRegistration"]; ?></p>
     </header>
     <form action="register.php" method="POST">
         <ul>
