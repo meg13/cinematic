@@ -15,7 +15,7 @@ if (!isset($notifications)) {
     </header>
     <ul class="notification-list">
         <?php foreach ($notifications as $notification): ?>
-            <li>
+            <li id="<?php echo $notification["notif_id"] ?>" <?php if ($notification["read"]) echo 'class="read"' ?> >
                 <a href="<?php echo get_notification_action($notification) ?>">
                     <?php echo get_notification_text($notification) ?>
                 </a>

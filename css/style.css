@@ -306,6 +306,10 @@ header + form {
     border-radius: 16px;
 }
 
+.notification-list .read {
+    opacity: .6;
+}
+
 /* Movie */
 
 .movie-header {
