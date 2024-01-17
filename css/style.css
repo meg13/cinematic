@@ -553,6 +553,6 @@ form > input:disabled {
     filter: drop-shadow(0 0 16px var(--shadow));
 }
 
-.light-theme article, .light-theme .search-form input, .light-theme .notification-list a {
+.light-theme article, .light-theme .search-form input, .light-theme .notification-list a, .light-theme .unwatched {
     filter: drop-shadow(0 14px 16px var(--shadow));
 }
