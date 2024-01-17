@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
     } else if(isset($_POST["email"]) && isset($_POST["password"])){
         if($dbh->logInControl(($_POST["email"]))) {
-            $userPassword = $dbh -> getPassword($_POST["email"])[0]['password'];
+            $userPassword = $dbh -> getPasswordAndUsername($_POST["email"])[0]['password'];
+            $username = $dbh -> getPasswordAndUsername($_POST["email"])[0]['username'];
             if (password_verify($_POST['password'], $userPassword)) {
-                session_start();
-                $_SESSION["username"] = $_POST['username'];
+                $_SESSION["username"] = $username;
                 header('Location: feed.php');
 
             }else {

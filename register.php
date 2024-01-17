@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     } else if (isset($_POST['username'], $_POST['password'], $_POST['email'])){
         $dbh->registerUser($_POST['username'], $_POST['email'], $_POST['password']);
-        session_start();
         $_SESSION["username"] = $_POST['username'];
         header('Location: profile.php');
     }
