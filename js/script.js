@@ -37,6 +37,9 @@ async function getLoggedInUsername() {
 Array.from(document.getElementsByClassName("theme-switch")).forEach(switchButton => {
     switchButton.onclick = () => {
         toggleClass(document.body, "light-theme");
+        // This lets the animation run only when the theme is switched instead of at every change
+        document.body.classList.add("in-theme-switch");
+        // Persistent change
         ajaxGet("api/set_theme.php?light=" + document.body.classList.contains("light-theme"));
     }
 });
