@@ -22,6 +22,7 @@
 </head>
 
 <body <?php if ($_SESSION["light_theme"]) echo 'class="light-theme"' ?> >
+    <?php if (!$template["noNav"]): ?>
     <nav>
         <ul>
             <li><a href="feed.php"><svg class="home-icon"></svg>Home</a></li>
@@ -31,6 +32,7 @@
             <li><a href="#" class="theme-switch"><svg></svg>Tema</a></li>
         </ul>
     </nav>
+    <?php endif ?>
     
     <?php require($template["content"]) ?>
 

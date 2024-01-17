@@ -2,11 +2,9 @@
 require_once("bootstrap.php");
 
 $template["title"] = "Login";
+$template["noNav"]=true;
 $template["login"] = true;
-$template["script"] = "login.js";
 $template["content"] = "login_content.php";
-
-$template["loginError"] = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!isset($_POST['email'], $_POST['password']) ) {
@@ -21,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if($dbh->logInControl(($_POST["email"]))) {
             $userPassword = $dbh -> getPassword($_POST["email"])[0]['password'];
             if (password_verify($_POST['password'], $userPassword)) {
-                //session_start();
-                //$_SESSION["username"] = $_POST['username'];
-                header('Location: profile.php');
+                session_start();
+                $_SESSION["username"] = $_POST['username'];
+                header('Location: feed.php');
 
             }else {
                 $template["loginError"] = "Incorrect password!";
@@ -35,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 }
-
 
 require("template/base.php");
 

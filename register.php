@@ -4,10 +4,8 @@ require_once("bootstrap.php");
 
 $template["title"] = "Register";
 $template["content"] = "register_content.php";
+$template["noNav"]=true;
 $template["register"] = true;
-$template["script"] = "register.js";
-
-$template["errorRegistration"] = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
@@ -28,8 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     } else if (isset($_POST['username'], $_POST['password'], $_POST['email'])){
         $dbh->registerUser($_POST['username'], $_POST['email'], $_POST['password']);
-        //session_start();
-        //$_SESSION["username"] = $_POST['username'];
+        session_start();
+        $_SESSION["username"] = $_POST['username'];
+        header('Location: profile.php');
     }
 }
 
