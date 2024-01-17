@@ -16,6 +16,7 @@ function date_to_year($date) {
  * Converts an integer rating between 1 and 100 to an integer value between 1 and 5.
  */
 function rating_to_stars($rating) {
+    if (!is_numeric($rating)) return 0;
     return round($rating / 20);
 }
 
