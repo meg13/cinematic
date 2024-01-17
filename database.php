@@ -268,7 +268,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC)[0]["following_number"];
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["conta"];
     }
 
     //NUMERO PERSONE CHE UN UTENTE SEGUE
@@ -302,6 +302,15 @@ class DatabaseHelper{
 
     public function searchUsers($user) {
         $stmt = $this->db->prepare("SELECT username FROM Users WHERE username LIKE CONCAT(?, '%')");
+        $stmt->bind_param('s', $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function friendsRecentlyWatched($user) {
+        $stmt = $this->db->prepare("SELECT W.movie_id FROM Watched W JOIN Followership F ON W.user_id = F.followed_user_id WHERE F.following_user_id = ? ORDER BY W.date DESC LIMIT 12");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();
