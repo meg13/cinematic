@@ -241,8 +241,8 @@ class DatabaseHelper{
         return $stmt->num_rows > 0;
     }
 
-    public function getPassword($email) {
-        $stmt = $this->db->prepare("SELECT U.password FROM Users U WHERE U.email = ?");
+    public function getPasswordAndUsername($email) {
+        $stmt = $this->db->prepare("SELECT U.password, U.username FROM Users U WHERE U.email = ?");
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();

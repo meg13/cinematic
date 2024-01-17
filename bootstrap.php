@@ -19,6 +19,7 @@ require_once("util/movie_utils.php");
 $dbh = new DatabaseHelper("localhost", "root", "", "ProgettoWeb");
 
 function get_logged_in_username() {
+    session_start();
     return $_SESSION["username"];
 }
 ?>
