@@ -310,6 +310,11 @@ header + form {
     opacity: .6;
 }
 
+.notification-list p {
+    display: block;
+    text-align: center;
+}
+
 /* Movie */
 
 .movie-header {
