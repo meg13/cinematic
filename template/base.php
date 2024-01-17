@@ -2,9 +2,18 @@
 
 if (!isset($template)) die("Template parameters are not set");
 
-// Redirect to login if not logged in
-if (!isset($_SESSION["username"]) && !(isset($template["register"]) || isset($template["login"]))) {
-    header('Location: login.php');
+$is_login_page = isset($template["register"]) || isset($template["login"]);
+
+if (!isset($_SESSION["username"])) {
+    // Redirect to login if not logged in
+    if (!$is_login_page) {
+        header('Location: login.php');
+    }
+} else {
+    // Redirect to feed if logged in
+    if ($is_login_page) {
+        header('Location: feed.php');
+    }
 }
 
 ?>
