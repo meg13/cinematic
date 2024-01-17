@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (password_verify($_POST['password'], $userPassword)) {
                 //session_start();
                 //$_SESSION["username"] = $_POST['username'];
+                //header('Location: profile.php');
             }
         } else {
             echo 'Incorrect username and/or password!';
