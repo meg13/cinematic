@@ -13,3 +13,7 @@
 .movie-list, .new-comment {
     animation: slide-up 0.5s ease-out;
 }
+
+.movie-header .movie-list {
+    animation: none;
+}

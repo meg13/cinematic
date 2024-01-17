@@ -2,15 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800&display=swap');
 
 :root {
-    --bg: #2A2734;
     --primary: #F98066;
     --primary-bg: rgba(249, 128, 102, 0.15);
+    --base-spacing: 16px;
+
+    /* Dark theme */
+    --bg: #2A2734;
     --overlay1: #403B4F;
     --overlay2: #5D5774;
+    --text: #FFFBF7;
     --confirm: #4BF5A4;
     --confirm-bg: rgba(44, 150, 99, 0.15);
-    --text: #FFFBF7;
-    --base-spacing: 16px;
+}
+
+.light-theme {
+    --bg: #F3EFFE;
+    --overlay1: #FFFBF7;
+    --overlay2: var(--bg);
+    --text: #2A2734;
+    --confirm: #0a7f46;
 }
 
 body {
@@ -468,13 +478,21 @@ form > input[type=submit] {
     font-weight: bold;
 }
 
+.light-theme form > input[type=submit] {
+    color: var(--overlay1);
+}
+
 form > input:disabled {
     opacity: 0.5;
     cursor: auto;
 }
 
-form > input[type=submit][value=Cerca] {
+.search-form > input[type=submit] {
     padding: 12px 24px;
+}
+
+.light-theme .search-form > input[type=text] {
+    background-color: var(--overlay1);
 }
 
 .write-a-post > form {
