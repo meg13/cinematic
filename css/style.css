@@ -516,6 +516,10 @@ form > input:disabled {
     margin-right: 0;
 }
 
+.write-a-post > header + form {
+    margin: 14px 0 0;
+}
+
 .post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg {
     margin-right: 2px;
     margin-bottom: 3px;
