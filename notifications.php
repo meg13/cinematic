@@ -6,6 +6,7 @@ $notifications = $dbh->getNotifications(get_logged_in_username());
 
 $template["title"] = "Notifiche";
 $template["content"] = "notifications_content.php";
+$template["script"] = "notifications.js";
 $template["notifications"] = $notifications;
 
 require("template/base.php");
