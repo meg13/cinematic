@@ -42,7 +42,7 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
                 <p><?php echo $comment["body"]; ?></p>
             </div>
         <?php endforeach; ?>
-        <form action="api/create_comment.php?post_id=<?php echo $post_id ?>" method="POST">
+        <form action="api/create_comment.php?post_id=<?php echo $post_id ?>&comment_author=<?php echo $post["user_id"]?>" method="POST">
             <label for="write-comment" hidden>Scrivi un post</label>
             <textarea id="write-comment" name="write-comment" placeholder="Scrivi un commento..." rows="1"></textarea>
             <input type="submit" value="Invia">
