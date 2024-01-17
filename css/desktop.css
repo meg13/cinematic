@@ -27,6 +27,10 @@
         display: none;
     }
 
+    nav .theme-switch {
+        font-weight: normal;
+    }
+
     .col-left {
         flex: 6; /* 60% width */
         margin: 0 48px;

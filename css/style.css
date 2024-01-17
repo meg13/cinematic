@@ -4,23 +4,23 @@
 :root {
     --primary: #F98066;
     --primary-bg: rgba(249, 128, 102, 0.15);
-    --confirm: #4BF5A4;
-    --confirm-bg: rgba(44, 150, 99, 0.15);
     --base-spacing: 16px;
-}
 
-.dark-theme {
+    /* Dark theme */
     --bg: #2A2734;
     --overlay1: #403B4F;
     --overlay2: #5D5774;
     --text: #FFFBF7;
+    --confirm: #4BF5A4;
+    --confirm-bg: rgba(44, 150, 99, 0.15);
 }
 
 .light-theme {
     --bg: #F3EFFE;
-    --text: #2A2734;
     --overlay1: #FFFBF7;
     --overlay2: var(--bg);
+    --text: #2A2734;
+    --confirm: #0a7f46;
 }
 
 body {

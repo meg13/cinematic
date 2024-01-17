@@ -75,6 +75,16 @@ nav .bell-icon {
     -webkit-mask-image: url('../svg/bell.svg');
 }
 
+nav .theme-switch svg {
+    mask-image: url('../svg/sun.svg');
+    -webkit-mask-image: url('../svg/sun.svg');
+}
+
+.light-theme nav .theme-switch svg {
+    mask-image: url('../svg/moon.svg');
+    -webkit-mask-image: url('../svg/moon.svg');
+}
+
 .users-list svg {
     scale: 0.8;
     margin-bottom: 4px;

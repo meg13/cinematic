@@ -32,3 +32,11 @@ async function getLoggedInUsername() {
     const response = await fetch("api/current_user.php");
     return await response.text();
 }
+
+// Theme switch
+Array.from(document.getElementsByClassName("theme-switch")).forEach(switchButton => {
+    switchButton.onclick = () => {
+        toggleClass(document.body, "light-theme");
+        // TODO save value to session
+    }
+});
