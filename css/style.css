@@ -20,7 +20,8 @@
     --overlay1: #FFFBF7;
     --overlay2: var(--bg);
     --text: #2A2734;
-    --confirm: #0a7f46;
+    --confirm: #0A7F46;
+    --shadow: #aaa0c63d;
 }
 
 body {
@@ -492,10 +493,6 @@ form > input[type=submit] {
     font-weight: bold;
 }
 
-.light-theme form > input[type=submit] {
-    color: var(--overlay1);
-}
-
 form > input:disabled {
     opacity: 0.5;
     cursor: auto;
@@ -503,10 +500,6 @@ form > input:disabled {
 
 .search-form > input[type=submit] {
     padding: 12px 24px;
-}
-
-.light-theme .search-form > input[type=text] {
-    background-color: var(--overlay1);
 }
 
 .write-a-post > form {
@@ -546,4 +539,20 @@ form > input:disabled {
 
 .post {
     word-break: break-all;
+}
+
+.light-theme form > input[type=submit] {
+    color: var(--overlay1);
+}
+
+.light-theme .search-form > input[type=text] {
+    background-color: var(--overlay1);
+}
+
+.light-theme nav {
+    filter: drop-shadow(0 0 16px var(--shadow));
+}
+
+.light-theme article, .light-theme .search-form input, .light-theme .notification-list a {
+    filter: drop-shadow(0 14px 16px var(--shadow));
 }
