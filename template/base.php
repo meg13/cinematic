@@ -1,4 +1,13 @@
-<?php if (!isset($template)) die("Template parameters are not set") ?>
+<?php
+
+if (!isset($template)) die("Template parameters are not set");
+
+// Redirect to login if not logged in
+if (!isset($_SESSION["username"]) && !(isset($template["register"]) || isset($template["login"]))) {
+    header('Location: login.php');
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="it">
