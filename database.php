@@ -318,4 +318,13 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPostUser($post_id) {
+        $stmt = $this->db->prepare("SELECT P.user_id FROM Posts P WHERE P.post_id = ?");
+        $stmt->bind_param('s', $post_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["user_id"];
+    }
+
 }
