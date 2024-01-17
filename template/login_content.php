@@ -4,7 +4,7 @@
         <p>Accedi per entrare in un mondo di intrattenimento</p>
         <p id="wrongCredential">Credenziali errate</p>
     </header>
-    <form action="#" method="POST">
+    <form action="login.php" method="POST">
         <ul>
             <li><label for="email">E-mail</label>
                 <input type="text" id="email" name="email" placeholder="email@example.com"/>
@@ -20,7 +20,7 @@
     <p>oppure</p>
     <ul>
         <li>
-            <a href="register.html">Crea un account</a>
+            <a href="register.php">Crea un account</a>
         </li>
     </ul>
 </section>
