@@ -4,10 +4,8 @@ require_once("bootstrap.php");
 
 $template["title"] = "Register";
 $template["content"] = "register_content.php";
+$template["noNav"]=true;
 $template["register"] = true;
-$template["script"] = "register.js";
-
-$template["errorRegistration"] = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
@@ -18,14 +16,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // One or more values are empty.
         $template["errorRegistration"] = "Please complete the registration form! One or more values are empty";
         
-    } else if($dbh->alreadyRegistered($_POST['username'])) {
+    } else if($dbh->usernameAlreadyRegistered($_POST['username'])) {
         // Username already exists
         $template["errorRegistration"] = "Username already exists, please choose another!";
 
+    } else if($dbh->emailAlreadyRegistered($_POST['email'])) {
+        // Email already exists
+        $template["errorRegistration"] = "Email already exists, please choose another!";
+
     } else if (isset($_POST['username'], $_POST['password'], $_POST['email'])){
         $dbh->registerUser($_POST['username'], $_POST['email'], $_POST['password']);
-        //session_start();
-        //$_SESSION["username"] = $_POST['username'];
+        session_start();
+        $_SESSION["username"] = $_POST['username'];
+        header('Location: profile.php');
     }
 }
 

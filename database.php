@@ -214,7 +214,7 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function alreadyRegistered($user) {
+    public function usernameAlreadyRegistered($user) {
         $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.username = ?");
         $stmt->bind_param('s', $user);
         $stmt->execute();
@@ -223,13 +223,31 @@ class DatabaseHelper{
         return $stmt->num_rows > 0;
     }
 
-    public function logInControl($email, $password) {
-        $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.email = ? AND U.password = ?");
-        $stmt->bind_param('ss', $email, $password);
+    public function emailAlreadyRegistered($email) {
+        $stmt = $this->db->prepare("SELECT * FROM Users U WHERE U.email = ?");
+        $stmt->bind_param('s', $email);
         $stmt->execute();
         $stmt->store_result();
 
         return $stmt->num_rows > 0;
+    }
+
+    public function logInControl($email) {
+        $stmt = $this->db->prepare("SELECT U.email, U.password FROM Users U WHERE U.email = ?");
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $stmt->store_result();
+
+        return $stmt->num_rows > 0;
+    }
+
+    public function getPassword($email) {
+        $stmt = $this->db->prepare("SELECT U.password FROM Users U WHERE U.email = ?");
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function followUser($user, $followedUser) {
