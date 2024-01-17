@@ -18,7 +18,7 @@
     <title><?php $template["title"] ?></title>
 </head>
 
-<body>
+<body <?php if ($_SESSION["light_theme"]) echo 'class="light-theme"' ?> >
     <nav>
         <ul>
             <li><a href="feed.php"><svg class="home-icon"></svg>Home</a></li>

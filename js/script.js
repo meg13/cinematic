@@ -37,6 +37,6 @@ async function getLoggedInUsername() {
 Array.from(document.getElementsByClassName("theme-switch")).forEach(switchButton => {
     switchButton.onclick = () => {
         toggleClass(document.body, "light-theme");
-        // TODO save value to session
+        ajaxGet("api/set_theme.php?light=" + document.body.classList.contains("light-theme"));
     }
 });
