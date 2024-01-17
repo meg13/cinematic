@@ -186,6 +186,7 @@ header .edit, .logout {
 }
 
 .bio p, .movie-description p {
+    word-break: break-all;
     line-height: 1.4;
 }
 
