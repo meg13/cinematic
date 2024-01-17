@@ -47,7 +47,12 @@ if (!isset($_SESSION["username"])) {
             <li><a href="search.php"><svg class="search-icon"></svg>Cerca</a></li>
             <li><a href="profile.php"><svg class="profile-icon"></svg>Profilo</a></li>
             <li><a href="notifications.php"><svg class="bell-icon"></svg>Notifiche</a></li>
-            <li><a href="#" class="theme-switch"><svg></svg>Tema</a></li>
+            <li><a href="#" class="theme-switch">
+                <svg role="application">
+                    <title>Cambia tema</title>
+                </svg>
+                Tema
+            </a></li>
         </ul>
     </nav>
     <?php endif ?>
