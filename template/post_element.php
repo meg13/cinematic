@@ -9,7 +9,10 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
 <article class="post" id="<?php echo $post_id ?>">
     <header>
         <h3><?php echo $post["movie_title"]; ?></h3>
-        <div class="stars stars-<?php echo $post["stars"] ?>"><svg></svg><svg></svg><svg></svg><svg></svg><svg></svg></div>            
+        <?php
+        $_GET["stars_filled_amount"] = $post["stars"];
+        require("stars.php")
+        ?>
     </header>
     <p><?php echo $post["body"]; ?></p>
     <footer>
