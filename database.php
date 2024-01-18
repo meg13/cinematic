@@ -18,7 +18,7 @@ class DatabaseHelper{
     }
 
     public function getFriendsPosts($user) {
-        $stmt = $this->db->prepare("SELECT P.post_id, P.body, P.user_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id JOIN Movies M ON P.movie_id = M.movie_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
+        $stmt = $this->db->prepare("SELECT P.post_id, P.body, P.user_id, M.movie_id, M.title AS movie_title, P.stars FROM Posts P JOIN Followership ON P.user_id = Followership.followed_user_id JOIN Movies M ON P.movie_id = M.movie_id WHERE Followership.following_user_id = ? ORDER BY P.date DESC");
         $stmt->bind_param('s', $user);
         $stmt->execute();
         $result = $stmt->get_result();

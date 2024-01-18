@@ -8,7 +8,7 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
 ?>
 <article class="post" id="<?php echo $post_id ?>">
     <header>
-        <h3><?php echo $post["movie_title"]; ?></h3>
+        <h3><a href="movie.php?id=<?php echo $post["movie_id"]; ?>"><?php echo $post["movie_title"]; ?></a></h3>
         <?php
         $_GET["stars_filled_amount"] = $post["stars"];
         require("stars.php")
@@ -30,7 +30,7 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
                 </a>
             </li>
             <li>
-                <p><?php echo $post["user_id"]; ?></p>
+                <a href="profile.php?user=<?php echo $post["user_id"]; ?>"><?php echo $post["user_id"]; ?></a>
             </li>
         </ul>
     </footer>
@@ -38,7 +38,7 @@ $is_liked = $dbh -> alreadyLikedPost($user_id, $post_id);
         <hr>
         <?php foreach ($comments as $comment) : ?>
             <div>
-                <p><?php echo $comment["user_id"]; ?></p>
+                <p><a href="profile.php?user=<?php echo $comment["user_id"]; ?>"><?php echo $comment["user_id"]; ?></a></p>
                 <p><?php echo $comment["body"]; ?></p>
             </div>
         <?php endforeach; ?>

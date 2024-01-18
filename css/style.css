@@ -254,7 +254,7 @@ header .edit, .logout {
     color: var(--text);
 }
 
-.movie-list a:not(:hover), .users-list a:not(:hover) {
+.movie-list a:not(:hover), .users-list a:not(:hover), .post > header > h3 > a:not(:hover), .comment-section >div >p:first-child > a:not(:hover) {
     text-decoration: none;
 }
 
@@ -419,10 +419,14 @@ article > footer > ul > li {
     margin: 0;
 }
 
-article > footer > ul > li > p, .comment-section >div >p:first-child, ::placeholder  {
+article > footer li:last-child > a, .comment-section >div >p:first-child > a, ::placeholder  {
     color: var(--text);
     opacity: 0.5;
     font-family: "Rubik", "Arial", sans-serif;
+}
+
+article > footer li:last-child > a:hover {
+    text-decoration: underline;
 }
 
 .unliked > svg, .liked > svg, .comment-button > svg {
