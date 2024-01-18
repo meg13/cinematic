@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS ProgettoWeb;
-CREATE DATABASE IF NOT EXISTS ProgettoWeb;
-USE ProgettoWeb;
+DROP DATABASE IF EXISTS Cinematic;
+CREATE DATABASE IF NOT EXISTS Cinematic;
+USE Cinematic;
 
 # ---------------------------------------------------------------------- #
 # Tables                                                                 #

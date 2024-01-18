@@ -16,7 +16,7 @@ require_once("database.php");
 require_once("omdb/omdb.php");
 require_once("util/movie_utils.php");
 
-$dbh = new DatabaseHelper("localhost", "root", "", "ProgettoWeb");
+$dbh = new DatabaseHelper("localhost", "root", "", "Cinematic");
 
 session_start();
 
