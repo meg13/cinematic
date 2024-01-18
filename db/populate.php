@@ -32,9 +32,13 @@ $posts = array(
     array("rating" => 5, "text" => "Davvero un bel film, con regia magistrale."),
     array("rating" => 5, "text" => "Senza parole, davvero un capolavoro senza eguali."),
     array("rating" => 5, "text" => "Un film che lascia senza fiato. 5 stelle meritatissime!"),
+    array("rating" => 5, "text" => "Film davvero incredibile"),
+    array("rating" => 5, "text" => "Film PAZZESCO"),
+    array("rating" => 5, "text" => "Estremamente godibile. Approvato!"),
     array("rating" => 4, "text" => "La trama è intrigante e la regia superba."),
     array("rating" => 4, "text" => "Il film è ben realizzato, interpretazioni notevoli ma alcune scene potevano essere più approfondite."),
     array("rating" => 4, "text" => "Un'esperienza cinematografica apprezzabile, seppur con qualche margine di miglioramento."),
+    array("rating" => 4, "text" => "Un film davvero bello da vedere in famiglia."),
     array("rating" => 3, "text" => "Un film che si posiziona nella media. La trama è abbastanza coinvolgente ma manca di originalità."),
     array("rating" => 3, "text" => "Mi aspettavo di più..."),
     array("rating" => 3, "text" => "Visione carina, ma niente di che."),
@@ -58,6 +62,16 @@ $comments = array(
     "ahahahaha"
 );
 
+$bio = array(
+    "Appassionato di cinema!",
+    "Grande fan dei titoli Sci-Fi",
+    "Amante del cinema vintage.",
+    "Cinefilo sin da piccolo",
+    "Dedicato alla magia del cinema...",
+    "Esploratore di mondi cinematografici",
+    "Scopritore di gemme cinematografiche nascoste!",
+);
+
 function get_random_element($array) {
     return $array[rand(0, count($array) - 1)];
 }
@@ -77,6 +91,7 @@ for ($i = 1; $i <= USERS_AMOUNT; $i++) {
 
     $username = "user" . $i;
     $dbh->registerUser($username, "user" . $i . "@example.com", "Password" . $i);
+    $dbh->updateBio($username, get_random_element($bio));
 
     for ($j = 0; $j < 5; $j++) {
         // Watched movies
