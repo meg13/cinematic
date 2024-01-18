@@ -9,7 +9,7 @@
 
 Copiare il contenuto di [Cinematic.sql](db/Cinematic.sql) ed incollarlo in phpMyAdmin nella sezione SQL, per poi eseguirlo.
 
-Dovrebbe essere stato creato il database vuoto `Cinematic`, che può essere popolato con dati fittizi aprendo tramite browser il file `localhost/<directory>/db/populate.php`. Il file va eseguito una sola volta, e dirà _"Complete"_ quando il database sarà stato popolato correttamente.
+Dovrebbe essere stato creato il database vuoto `Cinematic`, che può essere popolato con dati fittizi aprendo tramite browser il file `localhost/<directory>/db/populate.php`. Il file va eseguito una sola volta, e dirà _"Complete"_ quando il database sarà stato popolato correttamente (potrebbe richiedere un po' di tempo).
 
 ## Accesso
 

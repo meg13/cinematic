@@ -93,7 +93,7 @@ for ($i = 1; $i <= USERS_AMOUNT; $i++) {
     $dbh->registerUser($username, "user" . $i . "@example.com", "Password" . $i);
     $dbh->updateBio($username, get_random_element($bio));
 
-    for ($j = 0; $j < 5; $j++) {
+    for ($j = 0; $j < 12; $j++) {
         // Watched movies
         $watched_movie = get_random_element($movies);
         if (!$dbh->isWatched($username, $watched_movie)) {
@@ -102,12 +102,6 @@ for ($i = 1; $i <= USERS_AMOUNT; $i++) {
             // Posts
             $post = get_random_element($posts);
             $dbh->writePost($username, $post["text"], $watched_movie, $post["rating"]);
-        }
- 
-        // Watchlist movies
-        $watchlist_movie = get_random_element($movies);
-        if (!$dbh->isInWatchlist($username, $watchlist_movie)) {
-            $dbh->addToWatchlist($username, $watchlist_movie);
         }
     }
 }
@@ -118,6 +112,12 @@ for ($i = 1; $i <= USERS_AMOUNT; $i++) {
     $username = "user" . $i;
 
     for ($j = 0; $j < 8; $j++) {
+        // Watchlist movies
+        $watchlist_movie = get_random_element($movies);
+        if (!$dbh->isWatched($username, $watchlist_movie) && !$dbh->isInWatchlist($username, $watchlist_movie)) {
+            $dbh->addToWatchlist($username, $watchlist_movie);
+        }
+
         // Follow
         $follow_user = "user" . rand(1, USERS_AMOUNT);
         if ($follow_user != $username && !$dbh->checkFollowUser($username, $follow_user)) {
