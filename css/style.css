@@ -545,17 +545,12 @@ form > input:disabled {
     word-break: break-all;
 }
 
-/*modified*/
 .write-a-post > header + form {
     margin: 14px 0 0;
 }
 
-.light-theme form > input[type=submit], .light-theme .follow {
-    color: var(--overlay1);
-}
-
-.post {
-    word-break: break-all;
+.comment-button, .unliked {
+    cursor: pointer;
 }
 
 .light-theme form > input[type=submit], .light-theme .follow {
@@ -577,3 +572,4 @@ form > input:disabled {
 .light-theme article, .light-theme .search-form input, .light-theme .notification-list a, .light-theme .unwatched {
     filter: drop-shadow(0 14px 16px var(--shadow));
 }
+
