@@ -72,6 +72,7 @@ Array.from(document.getElementsByClassName("comment-section")).forEach(commentSe
             author.innerText = username;
             newComment.append(author, text);
             commentSection.insertBefore(newComment, commentForm);
+            commentSection.closest(".post").querySelector(".comment-button span").innerText++;
             newComment.className = "new-comment"; // for animation
         });
     });
