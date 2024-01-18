@@ -4,8 +4,14 @@
     transition: background 0.4s ease-out;
 }
 
-.in-theme-switch :is(h1, h2, h3, p, span, a, input, textarea) {
+.in-theme-switch :is(h1, h2, h3, p, span, a, input, textarea), .unwatched {
     transition: color 0.2s ease-in-out;
+}
+
+/* Other transitions */
+
+.unwatched a {
+    transition: background 0.25s ease-out;
 }
 
 input {
