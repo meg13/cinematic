@@ -1,6 +1,6 @@
 <section class="col-center-only">
     <header <?php if(isset($template["loginError"])) echo 'class="error-section"'?>>
-        <h1>NomeSito</h1>
+        <h1>Cinematic</h1>
         <p>Accedi per entrare in un mondo di intrattenimento</p>
         <p id="wrongCredential" style="display: <?php echo isset($template["loginError"]) ? "inline-block" : "none" ?>"><?php echo $template["loginError"]; ?></p>
     </header>
