@@ -45,7 +45,7 @@ Array.from(document.getElementsByClassName("comment-button")).forEach(commentBut
  */
 function validateNewCommentForm(textArea, submitButton) {
     if (textArea.value.length == 0) {
-        submitButton.setAttribute("disabled", "true")
+        submitButton.setAttribute("disabled", "disabled")
     } else {
         submitButton.removeAttribute("disabled");
     }
