@@ -13,18 +13,30 @@ $movies = array(
     "tt0109830", // Forrest Gump
     "tt0795421", // Mamma Mia!
     "tt2582802", // Whiplash
-    "tt3783958", //La La Land
-    "tt2872718", //NIghtcrawler
-    "tt0367594", //Charlie and the Chocolate Factory
-    "tt0240772", //Ocean's Eleven
-    "tt1130884", //Shutter Island
-    "tt0110912", //Pulp Fiction
-    "tt0119217", //Good Will Hunting
-    "tt0499549", //Avatar
-    "tt0317219", //Cars
-    "tt0266697", //Kill Bill: Vol. 1
-    "tt0816692", //Interstellar
-    "tt7286456", //Joker
+    "tt3783958", // La La Land
+    "tt2872718", // NIghtcrawler
+    "tt0367594", // Charlie and the Chocolate Factory
+    "tt0240772", // Ocean's Eleven
+    "tt1130884", // Shutter Island
+    "tt0110912", // Pulp Fiction
+    "tt0119217", // Good Will Hunting
+    "tt0499549", // Avatar
+    "tt0317219", // Cars
+    "tt0266697", // Kill Bill: Vol. 1
+    "tt0816692", // Interstellar
+    "tt7286456", // Joker
+    "tt0275847", // Lilo & Stitch
+    "tt0060196", // The Good, the Bad and the Ugly
+    "tt0120915", // Star Wars: Episode I - The Phantom Menace
+    "tt0054698", // Breakfast at Tiffany's
+    "tt0133093", // The Matrix
+    "tt0338013", // Eternal Sunshine of the Spotless Mind
+    "tt0137523", // Fight Club
+    "tt0077631", // Grease
+    "tt0458352", // The Devil Wears Prada
+    "tt2278388", // The Grand Budapest Hotel
+    "tt2294629", // Frozen
+
 );
 
 $posts = array(
