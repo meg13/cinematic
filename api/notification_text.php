@@ -23,7 +23,9 @@ function get_notification_action($notification) {
     switch ($notification["type"]) {
         case "L":
         case "C":
-            return isset($notification["post_id"]) ? "profile.php#" . $notification["post_id"] : "profile.php";
+            $url = "profile.php?user=" . $notification["receiving_user_id"];
+            if (isset($notification["post_id"])) $url .= "#" . $notification["post_id"];
+            return $url;
         case "F":
             return "profile.php?user=" . $notification["responsable_user_id"];
     }

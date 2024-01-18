@@ -1,3 +1,19 @@
+/* Theme switch */
+
+.in-theme-switch:is(body, nav, svg, div, article, a, input, textarea) {
+    transition: background 0.4s ease-out;
+}
+
+.in-theme-switch:is(p, span, a, input, textarea) {
+    transition: color 0.4s ease-in-out;
+}
+
+input {
+    transition: opacity 0.15s ease-in-out;
+}
+
+/* Slide */
+
 @keyframes slide-up {
     from {
         opacity: 0;

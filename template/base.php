@@ -24,30 +24,35 @@ if (!isset($_SESSION["username"])) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <?php if ($template["post"]): ?>
+    <?php if (isset($template["post"])): ?>
     <link rel="stylesheet" href="css/feedStyle.css">    
     <?php endif ?>
-    <?php if ($template["register"]): ?>
+    <?php if (isset($template["register"])): ?>
     <link rel="stylesheet" href="css/loginStyle.css">    
     <?php endif ?>
-    <?php if ($template["login"]): ?>
+    <?php if (isset($template["login"])): ?>
     <link rel="stylesheet" href="css/loginStyle.css">    
     <?php endif ?>
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/animations.css">
-    <title><?php $template["title"] ?></title>
+    <title><?php echo $template["title"] ?></title>
 </head>
 
 <body <?php if ($_SESSION["light_theme"]) echo 'class="light-theme"' ?> >
-    <?php if (!$template["noNav"]): ?>
+    <?php if (!isset($template["noNav"])): ?>
     <nav>
         <ul>
             <li><a href="feed.php"><svg class="home-icon"></svg>Home</a></li>
             <li><a href="search.php"><svg class="search-icon"></svg>Cerca</a></li>
             <li><a href="profile.php"><svg class="profile-icon"></svg>Profilo</a></li>
             <li><a href="notifications.php"><svg class="bell-icon"></svg>Notifiche</a></li>
-            <li><a href="#" class="theme-switch"><svg></svg>Tema</a></li>
+            <li><a href="#" class="theme-switch">
+                <svg role="application">
+                    <title>Cambia tema</title>
+                </svg>
+                Tema
+            </a></li>
         </ul>
     </nav>
     <?php endif ?>

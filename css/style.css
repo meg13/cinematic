@@ -20,7 +20,8 @@
     --overlay1: #FFFBF7;
     --overlay2: var(--bg);
     --text: #2A2734;
-    --confirm: #0a7f46;
+    --confirm: #0A7F46;
+    --shadow: #aaa0c63d;
 }
 
 body {
@@ -186,6 +187,7 @@ header .edit, .logout {
 }
 
 .bio p, .movie-description p {
+    word-break: break-all;
     line-height: 1.4;
 }
 
@@ -491,10 +493,6 @@ form > input[type=submit] {
     font-weight: bold;
 }
 
-.light-theme form > input[type=submit] {
-    color: var(--overlay1);
-}
-
 form > input:disabled {
     opacity: 0.5;
     cursor: auto;
@@ -502,10 +500,6 @@ form > input:disabled {
 
 .search-form > input[type=submit] {
     padding: 12px 24px;
-}
-
-.light-theme .search-form > input[type=text] {
-    background-color: var(--overlay1);
 }
 
 .write-a-post > form {
@@ -520,6 +514,10 @@ form > input:disabled {
     box-sizing: border-box;
     margin-bottom: 14px;
     margin-right: 0;
+}
+
+.write-a-post > header + form {
+    margin: 14px 0 0;
 }
 
 .post .stars svg, .comment-a-post .stars svg, .write-a-post .stars svg {
@@ -550,4 +548,32 @@ form > input:disabled {
 /*modified*/
 .write-a-post > header + form {
     margin: 14px 0 0;
+}
+
+.light-theme form > input[type=submit], .light-theme .follow {
+    color: var(--overlay1);
+}
+
+.post {
+    word-break: break-all;
+}
+
+.light-theme form > input[type=submit], .light-theme .follow {
+    color: var(--overlay1);
+}
+
+.light-theme .following {
+    background-color: #9384BA
+}
+
+.light-theme .search-form > input[type=text] {
+    background-color: var(--overlay1);
+}
+
+.light-theme nav {
+    filter: drop-shadow(0 0 16px var(--shadow));
+}
+
+.light-theme article, .light-theme .search-form input, .light-theme .notification-list a, .light-theme .unwatched {
+    filter: drop-shadow(0 14px 16px var(--shadow));
 }

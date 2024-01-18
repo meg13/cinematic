@@ -24,8 +24,8 @@ Array.from(likeButtons).forEach(likeButton => {
 
 // Comments show/hide
 
-function toggleCommentShow(commentButton, commentSection) {
-    toggleClass(commentButton, "show_comments",
+function toggleCommentShow(commentSection) {
+    toggleClass(commentSection, "show-comments",
         () => commentSection.style.display = "",
         () => commentSection.style.display = "none",
     );
@@ -34,7 +34,7 @@ function toggleCommentShow(commentButton, commentSection) {
 Array.from(document.getElementsByClassName("comment-button")).forEach(commentButton => {
     commentButton.onclick = () => {
         const commentSection = commentButton.closest('.post').getElementsByClassName("comment-section")[0];
-        toggleCommentShow(commentButton, commentSection);
+        toggleCommentShow(commentSection);
     }
 });
 
@@ -76,3 +76,12 @@ Array.from(document.getElementsByClassName("comment-section")).forEach(commentSe
         });
     });
 });
+
+// Expand selected post from fragment (e.g. profile.php#25 => 25th post)
+
+let selectedPostID = window.location.hash;
+if (selectedPostID) {
+    selectedPostID = selectedPostID.substring(1); // Removes the initial #
+    const post = document.getElementById(selectedPostID);
+    toggleCommentShow(post.getElementsByClassName("comment-section")[0]);
+}

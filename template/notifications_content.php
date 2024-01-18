@@ -20,6 +20,11 @@ if (!isset($notifications)) {
                     <?php echo get_notification_text($notification) ?>
                 </a>
             </li>
-        <?php endforeach ?>
+        <?php
+        endforeach;
+        if (empty($notifications)):
+        ?>
+        <p>Non hai nuove notifiche.</p>
+        <?php endif ?>
     </ul>
 </section>
