@@ -327,4 +327,12 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC)[0]["user_id"];
     }
 
+    public function getAllPosts() {
+        $stmt = $this->db->prepare("SELECT P.* FROM Posts P");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
