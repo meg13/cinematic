@@ -62,7 +62,8 @@ Array.from(document.getElementsByClassName("comment-section")).forEach(commentSe
     // Run on form submit
     enableAjaxFormSubmit(commentForm, () => {
         const newComment = document.createElement("div");
-        const author = document.createElement("p");
+        const paragraph = document.createElement("p");
+        const author = document.createElement("a");
         const text = document.createElement("p");
         text.innerText = textArea.value;
         textArea.value = "";
@@ -70,7 +71,9 @@ Array.from(document.getElementsByClassName("comment-section")).forEach(commentSe
 
         getLoggedInUsername().then(username => {
             author.innerText = username;
-            newComment.append(author, text);
+            author.href = "profile.php?user=" + username;
+            paragraph.append(author);
+            newComment.append(paragraph, text);
             commentSection.insertBefore(newComment, commentForm);
             commentSection.closest(".post").querySelector(".comment-button span").innerText++;
             newComment.className = "new-comment"; // for animation
